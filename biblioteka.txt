@@ -1,0 +1,116 @@
+KORISNICI: 
+	- admin
+	- bibliotekari
+		- rad sa korisnicima 
+		- rad sa fondom 
+	- deca/studenti/penzioneri/odrasli ljudi 
+
+Podaci korisnika: 
+		ime 
+		prezime
+		kontakt -> telefon/email (za decu podaci roditelkja)
+		JMBG
+		adresa
+
+bibliotekari zaduzeni za rad sa clanovima: 
+	- uclanjivanje 
+	- uzimanje knjige 
+	- produzivanje pozajmice -> samo jednom, na isti period 
+
+bibliotekari zaduceni za rad sa fondom: 
+	- registrovanje naslova
+	- unos broja primeraka -> kolicina
+	- rad sa fondom (kolekcija primeraka)
+
+	naslov == knjiga:
+		naziv
+		godina izdanja
+		autori 
+		opis
+		jezik
+		format
+		koricenje
+		izdavac
+		ISBN
+		UDK -> unose bibliotekari  
+
+	primerak == jedna kopija knjige: 
+		inventarni broj
+		nabavna cena 
+		(povezivace se broj primerka i korisnik prilikom iznajmljivanja knjige)
+
+korisnik: 
+	- moze da zakaze 
+	- istorija
+	- sta kad treba da vrati 
+
+SVI MOGU DA PRETRAZUJU FOND -> cak i anonimni korisnici -> ne zahteva registraciju
+
+	tip clanstva: 
+		deca
+		studenti
+		odrasli 
+		penzioneri 
+
+	clanstvo -> menja se zavisno tipu korisnika: 
+		cena clanarine
+		kolicina knjiga 
+		broj dana -> default 15 dana
+
+	Clanska karta: 
+		ID -> na nivou celog sistema (svih ogranaka)
+		datum pocetka 
+		datum kraja
+
+automatsko slanje opomene kada se probije rok -> putem mejla ili sms-a
+izvestaj na dnevnom nivou -> kome istice vreme citanja za taj dan
+salju se mejlovi -> prikaz liste bibliotekara
+
+nadoknada nabavne cene primerka ukoliko se izgubi 
+radno vreme softvera == radno vreme biblioteke 
+sajt je dostupan stalno -> pretraga fonda moguca uvek
+
+Admin -> registrovanje novih ogranaka, novih bibliotekara i azuriranje podataka same biblioteke 	
+
+Bibliotekar vidi sve clanove, podatke o svim naslovima i primercina iz svih ogranaka
+
+Moguce vratiti neki primerak u druge ogranke ali je nepozeljno 
+
+Bibliotekar je vezan za ogranak u kom radi -> zna u kom ogranku radi (ali moze da promeni ogranak u kom radi)
+
+Ogranak se unosi po adresi, odnosno naziv ogranka je adresa na kojoj se nalazi -> Dunavksa, Trg Mladenaca...
+
+VISEKRITERIJUMSKA PRETRAGA PO SVIM STAVKAMA NASLOVA -> PO SVIM ATRIBUTIMA 
+
+Inventarne knjige -> grupisanje naslova po kategorijama
+	D -> knjige za decu
+	O -> knjige za odrasele
+	E -> knjige na engleskom 
+	F -> knjige na francuskom ...
+	- omoguciti da bibliotekari sami definisu nazive inventarnih knjiga i raszvrstavanje naslova u njih 
+
+rad sa novcem: 
+	I smena 
+	II smena 
+
+	stampanje izvestaja o: 
+		clanarine $
+		kazne $
+		knjige $
+			kupljene $
+			kaznjene a izgubljene $
+
+	svaka smena moze da izvuce gore navedene izvestaje na kraju smene 
+
+Rang lista najcitanijih naslova -> najvise primeraka nekog naslova
+
+Rezervisanje knjiga: 
+	- rezervise se konkretan ISBN 
+
+	- ukidanje od strane korisnika 
+
+	- poruka/obavestenje korisniku da je knjiga njemu dodeljena 
+		- ima 2 dana da dodje po svoj primerak 
+		- ukoliko ne dodje primerak je se dodeljuje sledecem na redu cekanja 
+		- ne racunaju se praznici 
+
