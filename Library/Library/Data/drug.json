@@ -1,0 +1,132 @@
+{
+  "1": {
+    "Name": "Aspirin",
+    "Alergens": [
+      5,
+      3,
+      8,
+      0,
+      1,
+      2,
+      6,
+      9
+    ],
+    "NumberOfTablets": 22,
+    "Quantity": 4,
+    "Id": 1
+  },
+  "2": {
+    "Name": "Ibuprofen",
+    "Alergens": [
+      3,
+      9
+    ],
+    "NumberOfTablets": 30,
+    "Quantity": 8,
+    "Id": 2
+  },
+  "3": {
+    "Name": "Acetaminophen",
+    "Alergens": [
+      3
+    ],
+    "NumberOfTablets": 19,
+    "Quantity": 9,
+    "Id": 3
+  },
+  "4": {
+    "Name": "Lisinopril",
+    "Alergens": [
+      7,
+      9
+    ],
+    "NumberOfTablets": 30,
+    "Quantity": 9,
+    "Id": 4
+  },
+  "5": {
+    "Name": "Metformin",
+    "Alergens": [
+      3,
+      2,
+      0,
+      9,
+      8,
+      4,
+      7,
+      6,
+      5,
+      1
+    ],
+    "NumberOfTablets": 32,
+    "Quantity": 22,
+    "Id": 5
+  },
+  "6": {
+    "Name": "Simvastatin",
+    "Alergens": [
+      0,
+      2,
+      6,
+      5,
+      3
+    ],
+    "NumberOfTablets": 24,
+    "Quantity": 7,
+    "Id": 6
+  },
+  "7": {
+    "Name": "Levothyroxine",
+    "Alergens": [
+      5,
+      8,
+      4
+    ],
+    "NumberOfTablets": 25,
+    "Quantity": 15,
+    "Id": 7
+  },
+  "8": {
+    "Name": "Amoxicillin",
+    "Alergens": [
+      7,
+      5,
+      4,
+      1,
+      3,
+      9,
+      8,
+      6
+    ],
+    "NumberOfTablets": 33,
+    "Quantity": 9,
+    "Id": 8
+  },
+  "9": {
+    "Name": "Atorvastatin",
+    "Alergens": [
+      4,
+      8,
+      6
+    ],
+    "NumberOfTablets": 24,
+    "Quantity": 7,
+    "Id": 9
+  },
+  "10": {
+    "Name": "Omeprazole",
+    "Alergens": [
+      4,
+      2,
+      8,
+      3,
+      7,
+      9,
+      5,
+      1
+    ],
+    "NumberOfTablets": 23,
+    "Quantity": 10,
+    "Id": 10
+  }
+}

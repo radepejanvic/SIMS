@@ -1,0 +1,11 @@
+{
+  "1": {
+    "SecondRoomID": 10,
+    "EndType": 0,
+    "IsFinished": true,
+    "RoomID": 12,
+    "Begin": "2023-05-25T00:00:00+02:00",
+    "End": "2023-05-27T00:00:00",
+    "Id": 1
+  }
+}

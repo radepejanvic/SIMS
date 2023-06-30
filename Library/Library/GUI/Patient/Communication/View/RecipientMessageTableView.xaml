@@ -1,0 +1,97 @@
+﻿<Window x:Class="Library.View.Table.Chat.RecipientMessageTableView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.View.Table.Chat"
+        mc:Ignorable="d"
+        Title="RecipientMessageView" Height="450" Width="520">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock 
+                Grid.Column="0"
+                FontSize="24"
+                Text="Chat sa kolegama"
+                Style="{StaticResource Header}"/>
+        </Grid>
+
+        <ListView Grid.Row="1" Margin="30 25 30 0" 
+                  ItemsSource="{Binding Collegues}"
+                  SelectedItem="{Binding SelectedCollegue}"
+                  Width="450"
+                  SelectionMode="Single"
+                  >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Ime i prezime" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding FullName}" Padding="20 7 20 4" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Username" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Username}" Padding="20 7 20 4" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Tip" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Center" Text="{Binding Type}" Padding="20 7 20 4" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+            </Grid.ColumnDefinitions>
+
+            <Button 
+                Grid.Column="0"
+                Margin="120 5 5 5"
+                Padding="10"
+                Height="40"
+                Content="Otvori poruke"
+                Background="#fff"
+                Command="{Binding OpenMessagesCommand}"/>
+
+            <Button 
+                Grid.Column="3"
+                Margin="150 5 5 5"
+                Padding="10"
+                Height="40"
+                Content="Izadji"
+                Background="#fff"
+                Command="{Binding CloseCommand}"/>
+        </Grid>
+    </Grid>
+</Window>

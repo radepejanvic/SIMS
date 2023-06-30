@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="Library.View.DirectorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Library.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="350">
+    <Grid HorizontalAlignment="Left" Width="350">
+        <Button Height="30" Margin="65,19,65,401" Content="Renoviranje soba" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowRoomRenovationFrom}"/>
+        <Button Height="30" Margin="65,67,65,353" Content="Prikaz Dinamicke Opreme" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowDynamicalEquipmentTable}"/>
+        <Button Height="30" Margin="65,113,65,307" Content="Prikaz Staticke Opreme" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowStaticEquipmentQuantityTable}"/>
+        <Button Height="30" Margin="65,199,65,221" Content="Rasporedjivanje dinamicke opreme" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowDynamicalEquipmentRedistributionTable}"/>
+        <Button Height="30" Margin="65,158,65,262" Content="Rasporedjivanje staticke opreme" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowStaticEquipmentRedistributionTable}" RenderTransformOrigin="0.502,0.451"/>
+        <Button Height="30" Margin="64,283,66,137" Content="Spajanje soba" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowFusingRoomRenovationFrom}"/>
+        <Button Height="30" Margin="64,241,66,179" Content="Razdvajanje soba" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowDefusingRoomRenovationFrom}"/>
+        <Button Height="30" Margin="64,325,66,95" Content="Ankete bolnice" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowHospitalSurvey}"/>
+        <Button Height="30" Margin="64,368,66,52" Content="Ankete doktora" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowDoctorSurvey}"/>
+        <Button Height="30" Margin="64,404,66,16" Content="Zahtevi za odmor" BorderBrush="#FF3B71BF" FontFamily="Arial Rounded MT Bold" Command="{Binding ShowLeaveRequets}"/>
+
+    </Grid>
+</UserControl>

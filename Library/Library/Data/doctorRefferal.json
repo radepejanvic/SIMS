@@ -1,0 +1,101 @@
+{
+  "1": {
+    "DoctorId": 8,
+    "PatientId": 8,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": null,
+    "IsValid": true,
+    "Id": 1
+  },
+  "2": {
+    "DoctorId": 8,
+    "PatientId": 1,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": null,
+    "IsValid": true,
+    "Id": 2
+  },
+  "3": {
+    "DoctorId": 6,
+    "PatientId": 2,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": null,
+    "IsValid": false,
+    "Id": 3
+  },
+  "4": {
+    "DoctorId": 8,
+    "PatientId": 11,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": null,
+    "IsValid": true,
+    "Id": 4
+  },
+  "5": {
+    "DoctorId": 4,
+    "PatientId": 4,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": null,
+    "IsValid": true,
+    "Id": 5
+  },
+  "6": {
+    "DoctorId": 0,
+    "PatientId": 7,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": 14,
+    "IsValid": true,
+    "Id": 6
+  },
+  "7": {
+    "DoctorId": 0,
+    "PatientId": 11,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": 5,
+    "IsValid": true,
+    "Id": 7
+  },
+  "8": {
+    "DoctorId": 0,
+    "PatientId": 8,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": 0,
+    "IsValid": true,
+    "Id": 8
+  },
+  "9": {
+    "DoctorId": 0,
+    "PatientId": 2,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": 0,
+    "IsValid": true,
+    "Id": 9
+  },
+  "10": {
+    "DoctorId": 0,
+    "PatientId": 4,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": 0,
+    "IsValid": true,
+    "Id": 10
+  },
+  "11": {
+    "DoctorId": 1,
+    "PatientId": 3,
+    "IsOperation": false,
+    "Duration": 15,
+    "Specialization": null,
+    "IsValid": true,
+    "Id": 11
+  }
+}

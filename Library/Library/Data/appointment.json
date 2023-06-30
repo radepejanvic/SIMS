@@ -1,0 +1,72 @@
+{
+  "1": {
+    "DoctorId": 7,
+    "PatientId": 1,
+    "RoomId": 2,
+    "TimeSlot": {
+      "From": "2023-06-01T19:00:00",
+      "To": "2023-06-01T19:15:00"
+    },
+    "IsOperation": false,
+    "ChangeCount": 0,
+    "IsCanceled": false,
+    "CreatedAt": "2023-05-30T22:42:26.8573234+02:00",
+    "Id": 1
+  },
+  "2": {
+    "DoctorId": 6,
+    "PatientId": 1,
+    "RoomId": 2,
+    "TimeSlot": {
+      "From": "2023-06-03T10:00:00",
+      "To": "2023-06-03T10:15:00"
+    },
+    "IsOperation": false,
+    "ChangeCount": 0,
+    "IsCanceled": false,
+    "CreatedAt": "2023-05-30T22:42:43.4548221+02:00",
+    "Id": 2
+  },
+  "3": {
+    "DoctorId": 2,
+    "PatientId": 3,
+    "RoomId": 2,
+    "TimeSlot": {
+      "From": "2023-06-06T17:45:00",
+      "To": "2023-06-06T18:00:00"
+    },
+    "IsOperation": false,
+    "ChangeCount": 0,
+    "IsCanceled": false,
+    "CreatedAt": "2023-06-02T17:45:09.5206496+02:00",
+    "Id": 3
+  },
+  "4": {
+    "DoctorId": 5,
+    "PatientId": 3,
+    "RoomId": 2,
+    "TimeSlot": {
+      "From": "2023-06-14T14:00:00",
+      "To": "2023-06-14T14:15:00"
+    },
+    "IsOperation": false,
+    "ChangeCount": 0,
+    "IsCanceled": false,
+    "CreatedAt": "2023-06-02T17:45:26.3738291+02:00",
+    "Id": 4
+  },
+  "5": {
+    "DoctorId": 1,
+    "PatientId": 2,
+    "RoomId": 2,
+    "TimeSlot": {
+      "From": "2023-06-11T14:00:00",
+      "To": "2023-06-11T14:15:00"
+    },
+    "IsOperation": false,
+    "ChangeCount": 0,
+    "IsCanceled": false,
+    "CreatedAt": "2023-06-02T17:46:05.4321347+02:00",
+    "Id": 5
+  }
+}

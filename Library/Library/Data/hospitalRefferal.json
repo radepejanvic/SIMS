@@ -1,0 +1,82 @@
+{
+  "1": {
+    "Duration": 8,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 1,
+    "IsValid": true,
+    "Id": 1
+  },
+  "2": {
+    "Duration": 8,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 4,
+    "IsValid": false,
+    "Id": 2
+  },
+  "3": {
+    "Duration": 11,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 3,
+    "IsValid": true,
+    "Id": 3
+  },
+  "4": {
+    "Duration": 11,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": false,
+    "PatientId": 5,
+    "IsValid": false,
+    "Id": 4
+  },
+  "5": {
+    "Duration": 1,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 8,
+    "IsValid": false,
+    "Id": 5
+  },
+  "6": {
+    "Duration": 9,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 11,
+    "IsValid": true,
+    "Id": 6
+  },
+  "7": {
+    "Duration": 2,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": false,
+    "PatientId": 7,
+    "IsValid": true,
+    "Id": 7
+  },
+  "8": {
+    "Duration": 9,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 5,
+    "IsValid": true,
+    "Id": 8
+  },
+  "9": {
+    "Duration": 4,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 10,
+    "IsValid": true,
+    "Id": 9
+  },
+  "10": {
+    "Duration": 4,
+    "AppointmentId": 1,
+    "AdditionalAnalysis": true,
+    "PatientId": 11,
+    "IsValid": true,
+    "Id": 10
+  }
+}

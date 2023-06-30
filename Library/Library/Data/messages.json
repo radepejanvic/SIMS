@@ -1,0 +1,26 @@
+{
+  "1": {
+    "Id": 1,
+    "Username": "dusan123",
+    "MessageText": "dfsgdfg",
+    "Time": "2023-06-13T22:10:53.2632782+02:00"
+  },
+  "2": {
+    "Id": 2,
+    "Username": "dusan123",
+    "MessageText": "sdfsdf",
+    "Time": "2023-06-13T22:37:53.8130636+02:00"
+  },
+  "3": {
+    "Id": 3,
+    "Username": "dusan123",
+    "MessageText": "fgfdg",
+    "Time": "2023-06-13T22:37:57.1443098+02:00"
+  },
+  "4": {
+    "Id": 4,
+    "Username": "dusan123",
+    "MessageText": "sdfg",
+    "Time": "2023-06-14T10:16:38.7182512+02:00"
+  }
+}

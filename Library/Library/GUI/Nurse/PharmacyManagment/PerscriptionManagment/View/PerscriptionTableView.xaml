@@ -1,0 +1,102 @@
+﻿<Window x:Class="Library.View.Table.PerscriptionTableView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.View.Table" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:viewmodel="clr-namespace:Library.ViewModel.Table" d:DataContext="{d:DesignInstance Type=viewmodel:PatientPerscriptionTableViewModel}"
+        mc:Ignorable="d"
+        Title="PerscriptionTableView" Height="450" Width="650">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Text="Uvid u terapije pacijenta"
+            Margin="15"
+            VerticalAlignment="Center"
+            Style="{StaticResource Header}" />
+
+        <ListView Grid.Column="0" Grid.Row="1" Margin="10 0" ItemsSource="{Binding Perscriptions}" SelectedItem="{Binding SelectedPerscription}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Header="ID" Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Naziv leka" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DrugName}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Datum izdavanja" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DispensingDate}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Broj iskorisćenja recepta">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NumberOfRefills}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Datum mogućeg produženja">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RefillDate}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="Izaberi vreme početka"
+                Margin="15"
+                VerticalAlignment="Center"/>
+            <xctk:TimePicker 
+                Grid.Column="1"
+                Height="30"
+                Width="120"
+                Format="Custom" x:Name="fromDTP"
+                FormatString="dd/MM/yyyy HH:mm"
+                Text="{Binding From}" 
+                StartTime="08:00"
+                EndTime="20:00"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Prikaži instrukcije" Margin="10 0 0 0" Command="{Binding OpenInstruction}"/>
+            <Button Content="Produži terapiju" Margin="10 0 0 0" Command="{Binding ExtendTherapy}"/>
+            <Button Content="Zakaži pregled" Margin="10 0 0 0" Command="{Binding CreateAppointment}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

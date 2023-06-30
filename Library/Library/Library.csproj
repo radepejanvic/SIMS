@@ -1,0 +1,372 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestData\**" />
+    <EmbeddedResource Remove="TestData\**" />
+    <None Remove="TestData\**" />
+    <Page Remove="TestData\**" />
+    <Page Update="GUI\Survey\PatientSurveyTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI\Survey\PatientDoctorSurveyFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI\Survey\PatientHospitalSurveyFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI\Communication\View\ChatTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\MainView\NurseControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\MainView\PatientTableControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Patient\Main\PatientMainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Main\PatientMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="GUI2\Doctor\Main\PatientMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Doctor\Model\DoctorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Director\Main\DirectorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\Main\View\NurseControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\Main\View\PatientTableControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\PatientRegistration\View\MedicalRecordFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\PatientRegistration\View\PatientFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\UrgentAppointmentScheduling\View\UrgentAppointmentFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\UrgentAppointmentScheduling\View\DelayableAppointmentTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Nurse\RefferalAppointmentScheduling\View\RefferalTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Nurse\RefferalAppointmentScheduling\View\RefferalTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Nurse\RefferalManagment\RefferalAppointmentScheduling\View\RefferalTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Nurse\RefferalManagment\View\RefferalTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Nurse\RefferalManagment\RefferalHospitalTreatmentScheduling\View\HospitalTreatmentRoomsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Nurse\RefferalManagment\RefferalHospitalTreatmentScheduling\View\HospitalTreatmentRoomsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Nurse\PharmacyManagment\PerscriptionExtending\View\PerscriptionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Nurse\PharmacyManagment\PerscriptionExtending\View\PerscriptionTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Nurse\PharmacyManagment\PerscriptionManagment\View\PerscriptionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Nurse\PharmacyManagment\WarehouseManagment\View\DrugTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Nurse\PharmacyManagment\WarehouseManagment\View\DrugTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Nurse\HospitalTreatment\View\HospitalTreatmentPatientTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Nurse\HospitalTreatment\View\HospitalTreatmentPatientTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Nurse\HospitalTreatment\View\PatientCheckupFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Nurse\HospitalTreatment\View\PatientCheckupFormView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\Notifications\View\PatientAddNotificationFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\Notifications\View\PatientNotificationTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\Notifications\View\PatientUpdateNotificationConfigurationFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\PatientSatisfaction\View\PatientDoctorSurveyFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\PatientSatisfaction\View\PatientHospitalSurveyFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\PatientSatisfaction\View\PatientSurveyTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\Appointment\Scheduling\View\PatientUpdateAppointmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Appointment\Scheduling\View\PatientUpdateAppointmentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\Appointment\Scheduling\View\PatientCreateAppointmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Appointment\Scheduling\View\PatientCreateAppointmentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\Appointment\Scheduling\View\PatientAppoinmentsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Appointment\Scheduling\View\PatientAppoinmentsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\Appointment\AdvancedScheduling\View\PatientAdvancedAppointmentScheduilingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Patient\Appointment\AdvancedScheduling\View\PatientChoseRecommendedView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Appointment\AdvancedScheduling\View\PatientChoseRecommendedView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\Anamnesis\View\PatientMedicalRecordTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Anamnesis\View\PatientMedicalRecordTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\Anamnesis\View\ShowAnamnesisView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\Anamnesis\View\ShowAnamnesisView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Patient\SearchingDoctor\View\PatientDoctorSearchTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Update="GUI2\Patient\SearchingDoctor\View\PatientDoctorSearchTableView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Update="GUI2\Doctor\AppointmentScheduling\View\DoctorAppointmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\AppointmentScheduling\View\DoctorCreateAppointmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\AppointmentScheduling\View\DoctorUpdateAppointmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\PatientSearchAndUpdate\View\DoctorsPatients.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\AppointmentInitiation\View\DoctorInitiateAppointmentView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\AppointmentInitiation\View\DoctorAppointmentMedicalRecordView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\DoctorRefferal\View\DoctorRefferalFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\HospitalRefferal\View\HospitalRefferalFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\DrugPerscribing\View\DrugInstructionFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\LeaveRequest\View\LeaveRequestFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Login\View\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Doctor\AppointmentInitiation\View\MedicalRecordDoctorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Patient\Communication\View\ChatTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Patient\Communication\View\RecipientMessageTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\PhysicalAssets\EquipmentManagmentSystem\View\DynamicalEquipmentRedistributionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\PhysicalAssets\EquipmentManagmentSystem\View\DynamicalEquipmentTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\PhysicalAssets\EquipmentManagmentSystem\View\LeaveRequestTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\PhysicalAssets\EquipmentManagmentSystem\View\StaticEquipmentQuantityTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\PhysicalAssets\EquipmentManagmentSystem\View\StaticEquipmentRedistributionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\EquipmentManagmentSystem\View\DynamicalEquipmentRedistributionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\EquipmentManagmentSystem\View\DynamicalEquipmentTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\EquipmentManagmentSystem\View\StaticEquipmentQuantityTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\EquipmentManagmentSystem\View\StaticEquipmentRedistributionTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\Rennovation\DefusionRennovation\RoomDefusingRenovationFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\Rennovation\FusionRennovation\RoomFusingRenovationFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\Rennovation\Rennovation\RoomRenovationFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Update="GUI2\Director\LeaveRequestManagment\View\LeaveRequestTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Director\SurveyManagment\View\DoctorSurveyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Director\SurveyManagment\View\DoctorSurveyTableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI2\Director\SurveyManagment\View\HospitalSurveyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="GUI\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <XamlRuntime>Wpf</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.1" />
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\LeaveRequest\" />
+    <Folder Include="Core\PatientHealthCare\Pharmacy\" />
+    <Folder Include="GUI\Director\SurveyManagment\Command\" />
+    <Folder Include="GUI\Doctor\AppointmentCRUD\Command\" />
+    <Folder Include="GUI\Doctor\PatientSearchAndUpdate\Command\" />
+    <Folder Include="GUI\Patient\Anamnesis\Commands\" />
+    <Folder Include="GUI\Patient\Appointment\Scheduling\Commands\" />
+    <Folder Include="GUI\Patient\SearchingDoctor\Commands\" />
+  </ItemGroup>
+
+</Project>

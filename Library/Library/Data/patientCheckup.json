@@ -1,0 +1,13 @@
+{
+  "1": {
+    "PatientId": 4,
+    "PatientPlacementId": 1,
+    "DateOfCheckup": "2023-06-13",
+    "TimeOfCheckup": 0,
+    "SystolicPressure": 120,
+    "DiastolicPressure": 100,
+    "Temperature": 36.0,
+    "Observations": "Nadam se da ovo radi",
+    "Id": 1
+  }
+}

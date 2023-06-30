@@ -1,0 +1,65 @@
+﻿<Window x:Class="Library.View.Table.HospitalTreatmentRoomsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.View.Table"
+        xmlns:viewmodel="clr-namespace:Library.ViewModel.Table" d:DataContext="{d:DesignInstance Type=viewmodel:HospitalTreatmentRoomsTableViewModel}"
+        mc:Ignorable="d"
+        Title="HospitalTreatmentRoomsView" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Grid.Row="0"
+            Text="Odabir sobe za bolničko lečenje"
+            Margin="15"
+            VerticalAlignment="Center"
+            Style="{StaticResource Header}" />
+
+        <ListView Grid.Column="0" Grid.Row="1" Margin="10 0 5 0" ItemsSource="{Binding Rooms}" SelectedItem="{Binding SelectedRoom}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem" >
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Header="ID" Width="auto">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RoomID}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Tip sobe" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RoomType}" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Status" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Slobodna" Foreground="Green" HorizontalAlignment="Center" Padding="5"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Započni bolničko lečenje" Margin="10 0 0 0" Command="{Binding StartHospitalTreatment}"/>
+        </StackPanel>
+    </Grid>
+</Window>
