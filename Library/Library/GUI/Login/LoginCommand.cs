@@ -1,20 +1,18 @@
-﻿using System.Windows.Input;
-using Library.ViewModel;
-using System;
+﻿using System;
 using System.ComponentModel;
-using Library.Core.TehnicalService.Interface;
+using Library.Commands;
 using Library.Core.Enum;
-using Library.Core.Model;
+using Library.Core.TehnicalService.Interface;
 using Library.GUI.Admin;
-using Library.GUI.Member;
 using Library.GUI.LibrarianCollection;
 using Library.GUI.LibrarianMemberships;
+using Library.GUI.Member;
 
-namespace Library.Commands
+namespace Library.GUI.Login;
+
+public class LoginCommand : CommandBase
 {
-    public class LoginCommand : CommandBase
-    {
-        private readonly LoginViewModel _loginViewModel;
+    private readonly LoginViewModel _loginViewModel;
         private readonly MainViewModel _mainViewModel;
         private readonly ILoginService _loginService;
 
@@ -54,7 +52,6 @@ namespace Library.Commands
                     OnExecutionCompleted(false, "Greška prilikom otvaranja prozora.");
                     break;
             }
-
         }
         private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
@@ -64,5 +61,5 @@ namespace Library.Commands
                 OnCanExecutedChanged();
             }
         }
-    }
+       
 }
