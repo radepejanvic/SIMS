@@ -7,4 +7,11 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Core\Helpers\Repository\" />
+    <Folder Include="Core\LibraryCollection\" />
+    <Folder Include="Core\NewFolder\" />
+    <Folder Include="GUI\" />
+  </ItemGroup>
+
 </Project>
