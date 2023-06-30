@@ -1,23 +1,23 @@
 ﻿using System.Windows.Input;
 using Library.Commands;
-using Library.Service.TehnicalService.Interface;
+using Library.Core.TehnicalService.Interface;
 
 namespace Library.ViewModel
 {
     public class LoginViewModel : ViewModelBase
 	{
 
-		private string _userName;
-		public string UserName
+		private string _username;
+		public string Username
 		{
 			get
 			{
-				return _userName;
+				return _username;
 			}
 			set
 			{
-				_userName = value;
-				OnPropertyChanged(nameof(UserName));
+				_username = value;
+				OnPropertyChanged(nameof(Username));
 			}
 		}
 
@@ -35,7 +35,7 @@ namespace Library.ViewModel
 			}
 		}
 
-		public ICommand SubmitCommand { get; }
+		public CommandBase SubmitCommand { get; }
 
 		private readonly MainViewModel _mainViewModel;
 		public MainViewModel MainViewModel => _mainViewModel;
@@ -43,7 +43,7 @@ namespace Library.ViewModel
 		{
 			_mainViewModel = mainViewModel;
             SubmitCommand = new LoginCommand(this,mainViewModel,login);
-
-		}   
+            SubmitCommand.ExcecutionCompleted += ExecutionCompleted;
+        }   
     }
 }

@@ -1,5 +1,5 @@
 using Library.ViewModel;
-using Library.Service.TehnicalService.Interface;
+using Library.Core.TehnicalService.Interface;
 
 namespace Library
 {

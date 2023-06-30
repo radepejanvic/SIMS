@@ -30,6 +30,7 @@ using Library.Service.ScheduleService.Interface;
 using Library.Service.SurveyService;
 using Library.Service.TehnicalService;
 using Library.Service.TehnicalService.Interface;
+using Library.Core.TehnicalService.Interface;
 
 namespace Library.Configuration
 {
