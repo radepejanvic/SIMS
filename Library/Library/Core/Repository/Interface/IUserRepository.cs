@@ -7,6 +7,7 @@ namespace Library.Core.Repository.Interface
     {
         void Add(User user);
         User Get(int id);
+        User? Get(string username);
         Dictionary<int, User> GetAll();
         void Remove(int id);
     }

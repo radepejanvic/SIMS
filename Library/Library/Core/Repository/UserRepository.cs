@@ -33,6 +33,12 @@ namespace Library.Core.Repository
             return _repo.Get(id);
         }
 
+        public User? Get(string username)
+        {
+            return _repo.GetAll().Values
+                .FirstOrDefault(user => user.Username == username);
+        }
+
         public Dictionary<int, User> GetAll()
         {
             return _repo.GetAll();
