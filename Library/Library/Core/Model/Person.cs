@@ -11,6 +11,7 @@ namespace Library.Core.Model
     {
         public int Id { get; set; }
         public int UserId;
+        public string JMBG;
         public string Name;
         public string Surname;
         public string Phone;
@@ -22,9 +23,10 @@ namespace Library.Core.Model
             
         }
 
-        public Person(int userId, string name, string surname, string phone, string email, Address address)
+        public Person(int userId, string jmbg, string name, string surname, string phone, string email, Address address)
         {
             UserId = userId;
+            JMBG = jmbg;
             Name = name;
             Surname = surname;
             Phone = phone;
