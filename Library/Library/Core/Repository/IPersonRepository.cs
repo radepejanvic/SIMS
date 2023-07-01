@@ -7,6 +7,7 @@ namespace Library.Core.Repository
     {
         void Add(Person person);
         Person Get(int id);
+        Person? Get(string JMBG);
         Dictionary<int, Person> GetAll();
         void Remove(int id);
         void Update(Person person);

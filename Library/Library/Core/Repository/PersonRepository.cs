@@ -37,6 +37,12 @@ namespace Library.Core.Repository
             return _repo.Get(id);
         }
 
+        public Person? Get(string JMBG)
+        {
+            return _repo.GetAll().Values
+                .FirstOrDefault(person => person.JMBG == JMBG);
+        }
+
         public Dictionary<int, Person> GetAll()
         {
             return _repo.GetAll();
