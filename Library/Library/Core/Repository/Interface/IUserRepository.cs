@@ -10,5 +10,6 @@ namespace Library.Core.Repository.Interface
         User? Get(string username);
         Dictionary<int, User> GetAll();
         void Remove(int id);
+        void Update(User user);
     }
 }

@@ -23,6 +23,11 @@ namespace Library.Core.Repository
             _repo.Add(user);
         }
 
+        public void Update(User user)
+        {
+            _repo.Update(user);
+        }
+
         public void Remove(int id)
         {
             _repo.Remove(id);
