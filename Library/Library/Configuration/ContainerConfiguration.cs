@@ -30,7 +30,11 @@ namespace Library.Configuration
             builder.RegisterType<CRUDRepository<User>>().As<ICRUDRepository<User>>();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
 
-        
+            builder.RegisterType<ResourceConfigurationJSON<Person>>().As<IResourceConfiguration<Person>>();
+            builder.RegisterType<SerializerJSON<Person>>().As<ISerializer<Person>>();
+            builder.RegisterType<CRUDRepository<Person>>().As<ICRUDRepository<Person>>();
+            builder.RegisterType<PersonRepository>().As<IPersonRepository>();
+
             builder.RegisterType<LoginService>().As<ILoginService>();
 
             return builder.Build();
