@@ -20,6 +20,7 @@ namespace Library.Configuration
         private string AuthorJSON = @"..\..\..\Data\author.json";
         private string LibraryBranchJSON = @"..\..\..\Data\libraryBranch.json";
         private string LoanJSON = @"..\..\..\Data\loan.json";
+        private string BookAndAuthorJSON = @"..\..\..\Data\bookAndAuthor.json";
 
 
         public string GetResourcePath()
@@ -36,6 +37,7 @@ namespace Library.Configuration
                 nameof(Author) => AuthorJSON,
                 nameof(LibraryBranch) => LibraryBranchJSON,
                 nameof(Loan) => LoanJSON,
+                nameof(BookAndAuthor) => BookAndAuthorJSON,
                 _ => string.Empty
             };
 
