@@ -28,5 +28,10 @@ namespace Library.Core.Model
             Password = password;
             UserType = userType;
         }
+
+        public bool CheckPassword(string password)
+        {
+            return Password == password;
+        } 
     }
 }

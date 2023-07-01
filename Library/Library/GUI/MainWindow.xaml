@@ -3,31 +3,31 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Library" 
-        xmlns:view="clr-namespace:Library.View"
-        xmlns:viewtable="clr-namespace:Library.View.Table"
-        xmlns:vms="clr-namespace:Library.ViewModel"
-        xmlns:vmstable="clr-namespace:Library.ViewModel.Table"
-        xmlns:vmsform="clr-namespace:Library.ViewModel.Form"
-        xmlns:viewform="clr-namespace:Library.View.Form"
+        xmlns:local="clr-namespace:Library"
+        xmlns:login="clr-namespace:Library.GUI.Login"
+        xmlns:admin="clr-namespace:Library.GUI.Admin"
+        xmlns:member="clr-namespace:Library.GUI.Member"
+        xmlns:libcoll="clr-namespace:Library.GUI.LibrarianCollection"
+        xmlns:libmemb="clr-namespace:Library.GUI.LibrarianMemberships"
+
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1000">
     <Grid>
         <Grid.Resources>
-            <DataTemplate DataType="{x:Type vms:LoginViewModel}">
-                <view:LoginView />
+            <DataTemplate DataType="{x:Type login:LoginViewModel}">
+                <login:LoginView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:DirectorViewModel}">
-                <view:DirectorView />
+            <DataTemplate DataType="{x:Type admin:AdminViewModel}">
+                <admin:AdminView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vmstable:PatientTableViewModel}">
-                <view:NurseControl />
+            <DataTemplate DataType="{x:Type member:MemberViewModel}">
+                <member:MemberView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:DoctorMainViewModel}">
-                <view:DoctorView />
+            <DataTemplate DataType="{x:Type libcoll:LibrarianCollectionViewModel}">
+                <libcoll:LibrarianCollectionView />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:PatientMainViewModel}">
-                <view:PatientMainView />
+            <DataTemplate DataType="{x:Type libmemb:LibrarianMembershipsViewModel}">
+                <libmemb:LibrarianMembershipView />
             </DataTemplate>
         </Grid.Resources>
 

@@ -7,11 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Library.Configuration;
-using Library.Model;
-using Library.Service.FarmaceuticalService;
-using Library.Service.PhysicalAssetService.Interface;
-using Library.Service.TehnicalService;
-using Library.Service.TehnicalService.Interface;
+using Library.Core.TehnicalService.Interface;
 
 namespace Library
 {
@@ -32,24 +28,14 @@ namespace Library
             var container = ContainerConfiguration.Configure();
             ILoginService loginService;
 
-            IRenovationService renovationService;
-            IRoomService roomService;
-            IEquipmentService equipmentService;
-            IDrugWarehouseService drugWarehouseService;
-            ICustomNotificationService customNotificationService;
+           
             using (var scope = container.BeginLifetimeScope())
             {
                 loginService =  scope.Resolve<ILoginService>();
 
                 var dataGenerator = scope.Resolve<IDataGenerator>();
+                dataGenerator.GenerateAll(10);
 
-                //dataGenerator.GenerateRandomHospitalRefferal(10);
-             
-                equipmentService =  scope.Resolve<IEquipmentService>();
-                roomService = scope.Resolve<IRoomService>();
-                renovationService = scope.Resolve<IRenovationService>();
-                drugWarehouseService = scope.Resolve<IDrugWarehouseService>();
-                customNotificationService = scope.Resolve<ICustomNotificationService>();
             }
 
             MainWindow = new MainWindow()
@@ -61,14 +47,15 @@ namespace Library
             //PeriodicTaskAsync(equipmentService, drugWarehouseService, customNotificationService);
             base.OnStartup(e);
         }
-        async Task PeriodicTaskAsync(IEquipmentService equipmentService, IDrugWarehouseService drugWarehouseService, ICustomNotificationService customNotificationService)
-        {
-            while (true)
-            {
-                ThreadService.CallAllThread(equipmentService, drugWarehouseService, customNotificationService);
-                await Task.Delay(60000);
-            }
-        }
+
+        //async Task PeriodicTaskAsync(IEquipmentService equipmentService, IDrugWarehouseService drugWarehouseService, ICustomNotificationService customNotificationService)
+        //{
+        //    while (true)
+        //    {
+        //        ThreadService.CallAllThread(equipmentService, drugWarehouseService, customNotificationService);
+        //        await Task.Delay(60000);
+        //    }
+        //}
 
         protected override void OnExit(ExitEventArgs e)
         {

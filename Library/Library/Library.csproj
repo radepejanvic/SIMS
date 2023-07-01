@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Core\LeaveRequest\**" />
     <Compile Remove="TestData\**" />
+    <EmbeddedResource Remove="Core\LeaveRequest\**" />
     <EmbeddedResource Remove="TestData\**" />
+    <None Remove="Core\LeaveRequest\**" />
     <None Remove="TestData\**" />
+    <Page Remove="Core\LeaveRequest\**" />
     <Page Remove="TestData\**" />
     <Page Update="GUI\Survey\PatientSurveyTableView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -359,14 +363,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Core\LeaveRequest\" />
-    <Folder Include="Core\PatientHealthCare\Pharmacy\" />
-    <Folder Include="GUI\Director\SurveyManagment\Command\" />
-    <Folder Include="GUI\Doctor\AppointmentCRUD\Command\" />
-    <Folder Include="GUI\Doctor\PatientSearchAndUpdate\Command\" />
-    <Folder Include="GUI\Patient\Anamnesis\Commands\" />
-    <Folder Include="GUI\Patient\Appointment\Scheduling\Commands\" />
-    <Folder Include="GUI\Patient\SearchingDoctor\Commands\" />
+    <Folder Include="Core\Service\" />
+    <Folder Include="Data\" />
   </ItemGroup>
 
 </Project>
