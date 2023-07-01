@@ -1,0 +1,24 @@
+{
+  "1": {
+    "Name": "Laguna",
+    "Address": {
+      "Street": "Bulevar despota Stefana",
+      "Number": 107,
+      "City": "Beograd",
+      "PostalCode": "11000",
+      "Country": "Srbija"
+    },
+    "Id": 1
+  },
+  "2": {
+    "Name": "Dereta",
+    "Address": {
+      "Street": "Gospodar Jevremova",
+      "Number": 21,
+      "City": "Beograd",
+      "PostalCode": "11000",
+      "Country": "Srbija"
+    },
+    "Id": 2
+  }
+}

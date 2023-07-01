@@ -1,0 +1,101 @@
+{
+  "1": {
+    "PublisherId": 2,
+    "Title": "1984",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Distopijski roman koji prikazuje totalitarno društvo.",
+    "Language": 2,
+    "Cover": 0,
+    "ISBN": "YOAqoUK4hVdUd",
+    "UDK": "NGIujZRP",
+    "Id": 1
+  },
+  "2": {
+    "PublisherId": 1,
+    "Title": "Gospodar prstenova",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Epohalna fantastična trilogija o potrazi za uništenjem moćnog prstena.",
+    "Language": 2,
+    "Cover": 1,
+    "ISBN": "nQDjo0zOY3dZK",
+    "UDK": "SF2Q8YgZ",
+    "Id": 2
+  },
+  "3": {
+    "PublisherId": 2,
+    "Title": "Ubiti pticu rugalicu",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Priča o odrastanju koja se bavi temama predrasuda i nepravde.",
+    "Language": 3,
+    "Cover": 2,
+    "ISBN": "kCW8DyLF48i2v",
+    "UDK": "aGfoHUyI",
+    "Id": 3
+  },
+  "4": {
+    "PublisherId": 1,
+    "Title": "Građanin Kejn",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Složena pripovest koja istražuje život bogatog novinskog izdavača.",
+    "Language": 2,
+    "Cover": 1,
+    "ISBN": "ExK5XgIlM5Ftj",
+    "UDK": "gLMTgPIx",
+    "Id": 4
+  },
+  "5": {
+    "PublisherId": 2,
+    "Title": "Harry Potter i Kamen mudraca",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Prva knjiga popularne fantastične serije o avanturama mladog čarobnjaka.",
+    "Language": 0,
+    "Cover": 1,
+    "ISBN": "dyY396hFkO5qU",
+    "UDK": "I2RPtgJq",
+    "Id": 5
+  },
+  "6": {
+    "PublisherId": 1,
+    "Title": "Ponos i predrasude",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Klasični ljubavni roman koji istražuje društvene norme i složenosti ljubavi.",
+    "Language": 0,
+    "Cover": 0,
+    "ISBN": "z3ygRIuHOIzQA",
+    "UDK": "yb8Hh2nZ",
+    "Id": 6
+  },
+  "7": {
+    "PublisherId": 1,
+    "Title": "Vojna akademija",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Roman smešten u vojnu akademiju, fokusiran na iskustva kadeta.",
+    "Language": 2,
+    "Cover": 2,
+    "ISBN": "kKi5bITrR3M0x",
+    "UDK": "SaRMML0s",
+    "Id": 7
+  },
+  "8": {
+    "PublisherId": 1,
+    "Title": "Catcher in the Rye",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Kontroverzni roman ispričan iz perspektive razočaranog tinejdžera.",
+    "Language": 2,
+    "Cover": 0,
+    "ISBN": "fmWno3CnZYrxW",
+    "UDK": "2qRqqajF",
+    "Id": 8
+  },
+  "9": {
+    "PublisherId": 1,
+    "Title": "Alhemičar",
+    "PublicationYear": "2023-07-02T00:00:00+02:00",
+    "Description": "Filozofska priča o putovanju mladog pastira u potrazi za smislom života.",
+    "Language": 3,
+    "Cover": 1,
+    "ISBN": "gpDKPjfxuJCZs",
+    "UDK": "o69el2bv",
+    "Id": 9
+  }
+}

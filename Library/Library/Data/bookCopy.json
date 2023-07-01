@@ -1,0 +1,83 @@
+{
+  "1": {
+    "BookTitleId": 1,
+    "BranchId": 1,
+    "ISBN": "YOAqoUK4hVdUd",
+    "InventoryNumber": "NZG3wh",
+    "Price": 1807.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 1
+  },
+  "2": {
+    "BookTitleId": 2,
+    "BranchId": 1,
+    "ISBN": "nQDjo0zOY3dZK",
+    "InventoryNumber": "m65sKx",
+    "Price": 1528.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 2
+  },
+  "3": {
+    "BookTitleId": 3,
+    "BranchId": 1,
+    "ISBN": "kCW8DyLF48i2v",
+    "InventoryNumber": "Enizpg",
+    "Price": 1535.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 3
+  },
+  "4": {
+    "BookTitleId": 4,
+    "BranchId": 1,
+    "ISBN": "ExK5XgIlM5Ftj",
+    "InventoryNumber": "5ignBv",
+    "Price": 576.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 4
+  },
+  "5": {
+    "BookTitleId": 5,
+    "BranchId": 1,
+    "ISBN": "dyY396hFkO5qU",
+    "InventoryNumber": "fVXJ1w",
+    "Price": 449.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 5
+  },
+  "6": {
+    "BookTitleId": 6,
+    "BranchId": 1,
+    "ISBN": "z3ygRIuHOIzQA",
+    "InventoryNumber": "Hw97XC",
+    "Price": 451.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 6
+  },
+  "7": {
+    "BookTitleId": 7,
+    "BranchId": 1,
+    "ISBN": "kKi5bITrR3M0x",
+    "InventoryNumber": "ZS9Mwd",
+    "Price": 657.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 7
+  },
+  "8": {
+    "BookTitleId": 8,
+    "BranchId": 1,
+    "ISBN": "fmWno3CnZYrxW",
+    "InventoryNumber": "TjeWFd",
+    "Price": 1981.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 8
+  },
+  "9": {
+    "BookTitleId": 9,
+    "BranchId": 1,
+    "ISBN": "gpDKPjfxuJCZs",
+    "InventoryNumber": "3VD1Rm",
+    "Price": 691.0,
+    "ArrivalDate": "2023-07-02T00:00:00+02:00",
+    "Id": 9
+  }
+}
