@@ -22,14 +22,15 @@ namespace Library.Configuration
         {
             var builder = new ContainerBuilder();
 
+            builder.RegisterType<DataGenerator>().As<IDataGenerator>();
+
+            // Here is the template cnofiguration for a single model type (next 4 lines).
             builder.RegisterType<ResourceConfigurationJSON<User>>().As<IResourceConfiguration<User>>();
             builder.RegisterType<SerializerJSON<User>>().As<ISerializer<User>>();
             builder.RegisterType<CRUDRepository<User>>().As<ICRUDRepository<User>>();
             builder.RegisterType<UserRepository>().As<IUserRepository>();
-            
-            
-            
-            
+
+        
             builder.RegisterType<LoginService>().As<ILoginService>();
 
             return builder.Build();

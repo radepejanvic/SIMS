@@ -33,7 +33,8 @@ namespace Library
             {
                 loginService =  scope.Resolve<ILoginService>();
 
-                //var dataGenerator = scope.Resolve<IDataGenerator>();
+                var dataGenerator = scope.Resolve<IDataGenerator>();
+                dataGenerator.GenerateAll(10);
 
             }
 
