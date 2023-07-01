@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Library.Configuration;
 using Library.Core.TehnicalService.Interface;
+using Library.GUI.Helpers.Generator;
 
 namespace Library
 {
@@ -33,8 +34,8 @@ namespace Library
             {
                 loginService =  scope.Resolve<ILoginService>();
 
-                var dataGenerator = scope.Resolve<IDataGenerator>();
-                dataGenerator.GenerateAll(10);
+                //var userGenerator = scope.Resolve<IUserGenerator>();
+                //userGenerator.GenerateUsers(5, 10);
 
             }
 
