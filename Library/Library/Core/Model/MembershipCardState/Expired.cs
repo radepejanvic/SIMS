@@ -8,6 +8,6 @@ namespace Library.Core.Model.MembershipCardState
 {
     public class Expired : State
     {
-        public Expired(MembershipCard membershipCard) : base(membershipCard) { }
+        public Expired(int membershipCard) : base(membershipCard) { }
     }
 }

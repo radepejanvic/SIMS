@@ -8,7 +8,7 @@ namespace Library.Core.Model.MembershipCardState
 {
     public class Blocked : State
     {
-        public Blocked(MembershipCard membershipCard) : base(membershipCard) { }
+        public Blocked(int membershipCard) : base(membershipCard) { }
 
     }
 }

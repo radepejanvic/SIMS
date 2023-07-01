@@ -8,8 +8,8 @@ namespace Library.Core.Model.MembershipCardState
 {
     public class State
     {
-        public MembershipCard MembershipCard;
-        public State(MembershipCard membershipCard) 
+        public int MembershipCard;
+        public State(int membershipCard) 
         {
             MembershipCard = membershipCard;
         }

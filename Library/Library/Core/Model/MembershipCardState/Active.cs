@@ -8,7 +8,7 @@ namespace Library.Core.Model.MembershipCardState
 {
     public class Active : State
     {
-        public Active(MembershipCard membershipCard) : base(membershipCard) { }
+        public Active(int membershipCard) : base(membershipCard) { }
     
     }
 }
