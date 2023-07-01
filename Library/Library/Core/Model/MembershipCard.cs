@@ -28,7 +28,7 @@ namespace Library.Core.Model
             MembershipId = membershipId;
             PaymentDate = paymentDate;
             ExpirationDate = expirationDate;
-            State = new Active(this);
+            State = new Active(PersonId);
         }
     }
 }

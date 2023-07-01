@@ -1,0 +1,47 @@
+{
+  "1": {
+    "Name": "George",
+    "Surname": "Orwell",
+    "Id": 1
+  },
+  "2": {
+    "Name": "J.R.R.",
+    "Surname": "Tolkien",
+    "Id": 2
+  },
+  "3": {
+    "Name": "Harper",
+    "Surname": "Lee",
+    "Id": 3
+  },
+  "4": {
+    "Name": "Orson",
+    "Surname": "Welles",
+    "Id": 4
+  },
+  "5": {
+    "Name": "J.K.",
+    "Surname": "Rowling",
+    "Id": 5
+  },
+  "6": {
+    "Name": "Jane",
+    "Surname": "Austen",
+    "Id": 6
+  },
+  "7": {
+    "Name": "Danilo",
+    "Surname": "Kiš",
+    "Id": 7
+  },
+  "8": {
+    "Name": "J.D.",
+    "Surname": "Salinger",
+    "Id": 8
+  },
+  "9": {
+    "Name": "Paulo",
+    "Surname": "Coelho",
+    "Id": 9
+  }
+}

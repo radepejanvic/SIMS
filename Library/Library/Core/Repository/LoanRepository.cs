@@ -1,4 +1,5 @@
 ﻿using Library.Core.Model;
+using Library.Core.Repository.Interface;
 using Library.Repository.Interface;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,18 @@ namespace Library.Core.Repository
         {
             return _repo.Get(id);
         }
+
+        //public Dictionary<int, Loan> GetAll(int bookCopyId)
+        //{
+        //    return _repo.GetAll().Values
+        //        .Where(loan => loan.BookCopyId == bookCopyId)
+        //        .ToDictionary(loan => loan.Id, loan => loan);
+        //}
+
+        //public bool IsAvaliable(int bookCopyId)
+        //{
+
+        //}
 
         public Dictionary<int, Loan> GetAll()
         {

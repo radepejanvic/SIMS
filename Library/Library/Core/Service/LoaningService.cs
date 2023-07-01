@@ -11,10 +11,26 @@ namespace Library.Core.Service
     {
         private readonly IMembershipCardRepository _membershipCardRepo;
         private readonly ILoanRepository _loanRepo;
+
         public LoaningService(IMembershipCardRepository membershipCardRepo, ILoanRepository loanRepo) 
         {
             _membershipCardRepo = membershipCardRepo;
             _loanRepo = loanRepo;
+
+        }
+
+        public void LoanBook(int membershipId, int bookCopyId)
+        {
+            
+        }
+
+        public void IsAvaliable(int bookCopyId)
+        {
+
+        }
+
+        public void ReturnBook()
+        {
 
         }
     }
