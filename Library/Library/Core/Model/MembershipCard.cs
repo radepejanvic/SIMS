@@ -1,4 +1,5 @@
-﻿using Library.Serializer;
+﻿using Library.Core.Model.MembershipCardState;
+using Library.Serializer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Library.Core.Model
         public int MembershipId;
         public DateTime PaymentDate;
         public DateTime ExpirationDate;
+        public State State;
 
         public MembershipCard()
         {
@@ -26,6 +28,7 @@ namespace Library.Core.Model
             MembershipId = membershipId;
             PaymentDate = paymentDate;
             ExpirationDate = expirationDate;
+            State = new Active(this);
         }
     }
 }
