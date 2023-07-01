@@ -1,7 +1,7 @@
 ﻿using Library.Core.Model;
 using System.Collections.Generic;
 
-namespace Library.Core.Repository
+namespace Library.Core.Repository.Interface
 {
     public interface IPersonRepository
     {
