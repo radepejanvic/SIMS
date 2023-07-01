@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Automation;
 
 namespace Library.GUI.Helpers.Generator
 {
@@ -77,5 +78,21 @@ namespace Library.GUI.Helpers.Generator
             return phone += GenerateRandomStringOfNumbers(7);
         }
 
+        private void GenerateMemberships()
+        {
+            _membershipRepo.Add(new Membership(MembershipType.CHILD, 300, 2, 30, 2));
+            _membershipRepo.Add(new Membership(MembershipType.STUDENT, 500, 4, 60, 4));
+            _membershipRepo.Add(new Membership(MembershipType.ADULT, 700, 3, 30, 6));
+            _membershipRepo.Add(new Membership(MembershipType.CHILD, 500, 3, 30, 5));
+        }
+
+        private void GenerateMembershipCards(int start, int length)
+        {
+            for (int i = start; i < start + length; i++)
+            {
+                var membership = Random.Next(1, 5);
+                _membershipCard.Add(new MembershipCard(i, membership, DateTime.Today, DateTime.Today.AddYears(1)));
+            }
+        }
     }
 }
