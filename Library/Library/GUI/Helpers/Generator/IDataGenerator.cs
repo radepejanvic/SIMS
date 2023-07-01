@@ -1,7 +1,10 @@
-﻿namespace Library
+﻿using System;
+
+namespace Library
 {
     public interface IDataGenerator
     {
-        void GenerateAll(int amount);
+        void Generate(Action action, int amount);
+        void GenerateUsers(int librarians, int members);
     }
 }

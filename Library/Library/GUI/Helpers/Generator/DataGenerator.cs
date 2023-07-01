@@ -19,13 +19,13 @@ namespace Library
 {
     public class DataGenerator : IDataGenerator
     {
-        private static List<string> _names = new List<string> { "Ana", "Jovan", "Marko", "Mihajlo", "Milica", "Nikola", "Petar", "Sofija", "Stefan", "Tamara" };
-        private static List<string> _surnames = new List<string> { "Arsić", "Đorđević", "Ilić", "Janković", "Jovanović", "Kovačević", "Marković", "Petrović", "Stojanović", "Vuković" };
-        private static List<string> _domains = new List<string> { "gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "example.com" };
-        private static List<string> _signs = new List<string> { ".", "_", "0", "-" };
-        private static List<string> _phones = new List<string> { "060", "061", "062", "063", "064", "065", "066", "067", "068", "069" };
+        private static List<string> _names = new() { "Ana", "Jovan", "Marko", "Mihajlo", "Milica", "Nikola", "Petar", "Sofija", "Stefan", "Tamara" };
+        private static List<string> _surnames = new() { "Arsić", "Đorđević", "Ilić", "Janković", "Jovanović", "Kovačević", "Marković", "Petrović", "Stojanović", "Vuković" };
+        private static List<string> _domains = new() { "gmail.com", "yahoo.com", "hotmail.com", "outlook.com", "example.com" };
+        private static List<string> _signs = new() { ".", "_", "0", "-" };
+        private static List<string> _phones = new() { "060", "061", "062", "063", "064", "065", "066", "067", "068", "069" };
 
-        private static Random Random = new Random();
+        private static Random Random = new();
 
         //private readonly ICRUDRepository<User> _userRepo;
         private readonly IUserRepository _userRepo;
@@ -37,25 +37,19 @@ namespace Library
             _personRepo = personRepo;
         }
 
-        public void GenerateAll(int amount)
+        public void Generate(Action action, int amount)
         {
             for (int i = 0; i < amount; i++)
             {
-                //GenerateRandomUser();
+                action();
             }
         }
 
-        private Dictionary<int, T> Generate<T>(Func<int, T> generator, int length) where T : ISerializable
+        public void GenerateUsers(int librarians, int members)
         {
-            var data = new Dictionary<int, T>();
-            int id = 1;
-            while (data.Values.Count < length)
-            {
-                var obj = generator(id);
-                data.Add(id, obj);
-                id++;
-            }
-            return data;
+            GenerateAdmin();
+            Generate(GenerateLibrarian, librarians);
+            Generate(GenerateMember, members);
         }
 
         private void GenerateAdmin()
