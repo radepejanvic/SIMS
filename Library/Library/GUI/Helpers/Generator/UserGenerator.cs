@@ -81,7 +81,7 @@ namespace Library.GUI.Helpers.Generator
             return phone += GenerateRandomStringOfNumbers(7);
         }
 
-        private void GenerateMemberships()
+        public void GenerateMemberships()
         {
             _membershipRepo.Add(new Membership(MembershipType.CHILD, 300, 2, 30, 2));
             _membershipRepo.Add(new Membership(MembershipType.STUDENT, 500, 4, 60, 4));
@@ -89,7 +89,7 @@ namespace Library.GUI.Helpers.Generator
             _membershipRepo.Add(new Membership(MembershipType.CHILD, 500, 3, 30, 5));
         }
 
-        private void GenerateMembershipCards(int start, int length)
+        public void GenerateMembershipCards(int start, int length)
         {
             for (int i = start; i < start + length; i++)
             {
