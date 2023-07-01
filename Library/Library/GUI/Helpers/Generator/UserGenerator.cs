@@ -20,11 +20,15 @@ namespace Library.GUI.Helpers.Generator
 
         private readonly IUserRepository _userRepo;
         private readonly IPersonRepository _personRepo;
+        private readonly IMembershipRepository _membershipRepo;
+        private readonly IMembershipCardRepository _membershipCardRepo;
 
-        public UserGenerator(IUserRepository userRepo, IPersonRepository personRepo)
+        public UserGenerator(IUserRepository userRepo, IPersonRepository personRepo, IMembershipRepository membershipRepo, IMembershipCardRepository membershipCardRepo)
         {
             _userRepo = userRepo;
             _personRepo = personRepo;
+            _membershipRepo = membershipRepo;
+            _membershipCardRepo = membershipCardRepo;
         }
 
         public void GenerateUsers(int librarians, int members)
@@ -90,7 +94,7 @@ namespace Library.GUI.Helpers.Generator
             for (int i = start; i < start + length; i++)
             {
                 var membership = Random.Next(1, 5);
-                _membershipCard.Add(new MembershipCard(i, membership, DateTime.Today, DateTime.Today.AddYears(1)));
+                _membershipCardRepo.Add(new MembershipCard(i, membership, DateTime.Today, DateTime.Today.AddYears(1)));
             }
         }
     }

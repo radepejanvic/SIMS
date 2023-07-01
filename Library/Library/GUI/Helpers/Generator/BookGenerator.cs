@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Library.GUI.Helpers.Generator
 {
-    public class BookGenerator : DataGenerator
+    public class BookGenerator : DataGenerator, IBookGenerator
     {
         private readonly List<string> _titles = new()
         {
@@ -66,7 +66,7 @@ namespace Library.GUI.Helpers.Generator
             _bookCopyRepo = bookCopyRepo;
         }
 
-        public void GenerateLibraryCollectio()
+        public void GenerateLibraryCollection()
         {
             GeneratePublishers();
             GenerateAuthors();
@@ -75,7 +75,7 @@ namespace Library.GUI.Helpers.Generator
             GenerateBookCopies();
         }
 
-        private void GeneratePublishers() 
+        private void GeneratePublishers()
         {
             var lagunaAddress = new Address("Bulevar despota Stefana", 107, "Beograd", "11000", "Srbija");
             var deretaAddress = new Address("Gospodar Jevremova", 21, "Beograd", "11000", "Srbija");
@@ -94,7 +94,7 @@ namespace Library.GUI.Helpers.Generator
 
         private void GenerateBookAndAuthor()
         {
-            for (int i = 0; i < _titles.Count; i++)
+            for (int i = 1; i < _titles.Count + 1; i++)
             {
                 _bookAndAuthorRepo.Add(new BookAndAuthor(i, i));
             }
@@ -109,7 +109,7 @@ namespace Library.GUI.Helpers.Generator
             }
         }
 
-        private void GenerateBookCopies() 
+        private void GenerateBookCopies()
         {
             for (int i = 1; i < _titles.Count + 1; i++)
             {
