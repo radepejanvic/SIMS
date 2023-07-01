@@ -1,0 +1,102 @@
+{
+  "1": {
+    "PersonId": 7,
+    "MembershipId": 2,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 7
+    },
+    "Id": 1
+  },
+  "2": {
+    "PersonId": 8,
+    "MembershipId": 2,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 8
+    },
+    "Id": 2
+  },
+  "3": {
+    "PersonId": 9,
+    "MembershipId": 1,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 9
+    },
+    "Id": 3
+  },
+  "4": {
+    "PersonId": 10,
+    "MembershipId": 3,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 10
+    },
+    "Id": 4
+  },
+  "5": {
+    "PersonId": 11,
+    "MembershipId": 3,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 11
+    },
+    "Id": 5
+  },
+  "6": {
+    "PersonId": 12,
+    "MembershipId": 2,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 12
+    },
+    "Id": 6
+  },
+  "7": {
+    "PersonId": 13,
+    "MembershipId": 1,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 13
+    },
+    "Id": 7
+  },
+  "8": {
+    "PersonId": 14,
+    "MembershipId": 2,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 14
+    },
+    "Id": 8
+  },
+  "9": {
+    "PersonId": 15,
+    "MembershipId": 3,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 15
+    },
+    "Id": 9
+  },
+  "10": {
+    "PersonId": 16,
+    "MembershipId": 1,
+    "PaymentDate": "2023-07-02T00:00:00+02:00",
+    "ExpirationDate": "2024-07-02T00:00:00+02:00",
+    "State": {
+      "MembershipCard": 16
+    },
+    "Id": 10
+  }
+}

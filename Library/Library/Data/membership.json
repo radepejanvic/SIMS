@@ -1,0 +1,34 @@
+{
+  "1": {
+    "MembershipType": 0,
+    "Price": 300.0,
+    "LoanCount": 2,
+    "LoanDuration": 30,
+    "FinePerDay": 2.0,
+    "Id": 1
+  },
+  "2": {
+    "MembershipType": 1,
+    "Price": 500.0,
+    "LoanCount": 4,
+    "LoanDuration": 60,
+    "FinePerDay": 4.0,
+    "Id": 2
+  },
+  "3": {
+    "MembershipType": 2,
+    "Price": 700.0,
+    "LoanCount": 3,
+    "LoanDuration": 30,
+    "FinePerDay": 6.0,
+    "Id": 3
+  },
+  "4": {
+    "MembershipType": 0,
+    "Price": 500.0,
+    "LoanCount": 3,
+    "LoanDuration": 30,
+    "FinePerDay": 5.0,
+    "Id": 4
+  }
+}
