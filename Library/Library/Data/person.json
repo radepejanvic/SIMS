@@ -1,0 +1,102 @@
+{
+  "1": {
+    "UserId": 7,
+    "JMBG": "7254292020197",
+    "Name": "Jovan",
+    "Surname": "Marković",
+    "Phone": "0603738119",
+    "Email": "Jovan.Marković@hotmail.com",
+    "Address": null,
+    "Id": 1
+  },
+  "2": {
+    "UserId": 8,
+    "JMBG": "2802688414108",
+    "Name": "Sofija",
+    "Surname": "Kovačević",
+    "Phone": "0679829560",
+    "Email": "Sofija_Kovačević@outlook.com",
+    "Address": null,
+    "Id": 2
+  },
+  "3": {
+    "UserId": 9,
+    "JMBG": "5188035413560",
+    "Name": "Marko",
+    "Surname": "Janković",
+    "Phone": "0606830516",
+    "Email": "Marko.Janković@gmail.com",
+    "Address": null,
+    "Id": 3
+  },
+  "4": {
+    "UserId": 10,
+    "JMBG": "1714473190675",
+    "Name": "Sofija",
+    "Surname": "Arsić",
+    "Phone": "0670585717",
+    "Email": "Sofija.Arsić@hotmail.com",
+    "Address": null,
+    "Id": 4
+  },
+  "5": {
+    "UserId": 11,
+    "JMBG": "1645259000786",
+    "Name": "Sofija",
+    "Surname": "Vuković",
+    "Phone": "0612196991",
+    "Email": "Sofija0Vuković@gmail.com",
+    "Address": null,
+    "Id": 5
+  },
+  "6": {
+    "UserId": 12,
+    "JMBG": "5207114503076",
+    "Name": "Stefan",
+    "Surname": "Arsić",
+    "Phone": "0650312082",
+    "Email": "Stefan-Arsić@hotmail.com",
+    "Address": null,
+    "Id": 6
+  },
+  "7": {
+    "UserId": 13,
+    "JMBG": "3944810485478",
+    "Name": "Nikola",
+    "Surname": "Arsić",
+    "Phone": "0636322452",
+    "Email": "Nikola0Arsić@gmail.com",
+    "Address": null,
+    "Id": 7
+  },
+  "8": {
+    "UserId": 14,
+    "JMBG": "3277198443322",
+    "Name": "Tamara",
+    "Surname": "Jovanović",
+    "Phone": "0661420345",
+    "Email": "Tamara-Jovanović@outlook.com",
+    "Address": null,
+    "Id": 8
+  },
+  "9": {
+    "UserId": 15,
+    "JMBG": "1544721421058",
+    "Name": "Marko",
+    "Surname": "Kovačević",
+    "Phone": "0614981281",
+    "Email": "Marko.Kovačević@example.com",
+    "Address": null,
+    "Id": 9
+  },
+  "10": {
+    "UserId": 16,
+    "JMBG": "1637587671524",
+    "Name": "Ana",
+    "Surname": "Jovanović",
+    "Phone": "0628463135",
+    "Email": "Ana0Jovanović@gmail.com",
+    "Address": null,
+    "Id": 10
+  }
+}
