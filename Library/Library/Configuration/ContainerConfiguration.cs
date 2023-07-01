@@ -13,6 +13,7 @@ using Library.Core.TehnicalService.Interface;
 using Library.Core.Model;
 using Library.Core.Repository;
 using Library.Core.Repository.Interface;
+using Library.GUI.Helpers.Generator;
 
 namespace Library.Configuration
 {
@@ -22,7 +23,7 @@ namespace Library.Configuration
         {
             var builder = new ContainerBuilder();
 
-            builder.RegisterType<DataGenerator>().As<IDataGenerator>();
+            builder.RegisterType<UserGenerator>().As<IUserGenerator>();
 
             // Here is the template cnofiguration for a single model type (next 4 lines).
             builder.RegisterType<ResourceConfigurationJSON<User>>().As<IResourceConfiguration<User>>();
