@@ -2,6 +2,6 @@
 {
     public interface IDataGenerator
     {
-        void GenerateAll(int days);
+        void GenerateAll(int amount);
     }
 }
