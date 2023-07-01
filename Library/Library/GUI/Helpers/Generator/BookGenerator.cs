@@ -1,5 +1,6 @@
 ﻿using Library.Core.Enum;
 using Library.Core.Model;
+using Library.Core.Repository.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,8 +51,6 @@ namespace Library.GUI.Helpers.Generator
             "Paulo Coelho"
         };
 
-        private readonly List<string> _publishers= new() { "Laguna", "Dereta" };
-
         private readonly IPublisherRepository _publisherRepo;
         private readonly IAuthorRepository _authorRepo;
         private readonly IBookAndAuthorRepository _bookAndAuthorRepo;
@@ -97,7 +96,7 @@ namespace Library.GUI.Helpers.Generator
         {
             for (int i = 0; i < _titles.Count; i++)
             {
-                _bookAndAuthor.Add(new BookAndAuthor(i, i));
+                _bookAndAuthorRepo.Add(new BookAndAuthor(i, i));
             }
         }
 
