@@ -5,6 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Library.GUI.LibrarianCollection.TitleRegistration"
+        xmlns:viewmodel="clr-namespace:Library.GUI.LibrarianCollection.TitleRegistration.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewmodel:TitleRegistrationViewModel}"
         mc:Ignorable="d"
         Title="TitleRegistrationView" Height="600" Width="700">
     <Grid Background="BlanchedAlmond">
@@ -55,7 +57,7 @@
                     Grid.Column="1"
                     Margin="10"
                     VerticalAlignment="Center"
-                    Text="{Binding SearchMembers, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding SearchAuthors, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="0">
@@ -85,7 +87,7 @@
                     Margin="10"
                     VerticalAlignment="Center"
                     Width="140"
-                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding Title}"/>
                 <TextBlock
                     Grid.Column="0"
                     Grid.Row="1"
@@ -99,8 +101,8 @@
                     Height="20"
                     Width="140"
                     Format="Custom" x:Name="fromDTP"
-                    FormatString="dd/MM/yyyy HH:mm"
-                    Text="{Binding From}" 
+                    FormatString="yyyy."
+                    Text="{Binding PublicationYear}" 
                     StartTime="08:00"
                     EndTime="20:00"/>
                 <TextBlock
@@ -117,7 +119,7 @@
                     VerticalAlignment="Center"
                     Width="140"
                     Height="100"
-                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding Description}"/>
                 <TextBlock
                     Grid.Column="0"
                     Grid.Row="3"
@@ -128,8 +130,8 @@
                 <ComboBox 
                     Grid.Column="1"
                     Grid.Row="3"
-                    ItemsSource="{Binding AvaliableAlergies}" 
-                    SelectedItem="{Binding SelectedAlergy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    ItemsSource="{Binding Languages}" 
+                    SelectedItem="{Binding SelectedLanguage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                     Margin="15"
                     Width="140"
                     Height="20"/>
@@ -143,8 +145,8 @@
                 <ComboBox 
                     Grid.Column="1"
                     Grid.Row="4"
-                    ItemsSource="{Binding AvaliableAlergies}" 
-                    SelectedItem="{Binding SelectedAlergy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    ItemsSource="{Binding CoverTypes}" 
+                    SelectedItem="{Binding SelectedCover, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                     Margin="15"
                     Width="140"
                     Height="20"/>
@@ -161,7 +163,7 @@
                     Margin="10"
                     VerticalAlignment="Center"
                     Width="140"
-                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding ISBN}"/>
                 <TextBlock
                     Grid.Column="0"
                     Grid.Row="6"
@@ -175,7 +177,7 @@
                     Margin="10"
                     VerticalAlignment="Center"
                     Width="140"
-                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding UDK}"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="1">
@@ -185,7 +187,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <ListView Grid.Row="0" Margin="5 0 10 0" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}">
+                <ListView Grid.Row="0" Margin="5 0 10 0" ItemsSource="{Binding Authors}">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem" >
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -197,7 +199,7 @@
                             <GridViewColumn Header="ID" Width="auto">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding MembershipCardId}" HorizontalAlignment="Center" Padding="5"/>
+                                        <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
@@ -218,10 +220,10 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="JMBG">
+                            <GridViewColumn Header="Ovo treba da bude checkbox">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding JMBG}" HorizontalAlignment="Center" Padding="5"/>
+                                        <TextBlock Text="{Binding IsSelected}" HorizontalAlignment="Center" Padding="5"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
@@ -245,10 +247,10 @@
                     Grid.Column="1"
                     Margin="10"
                     VerticalAlignment="Center"
-                    Text="{Binding SearchMembers, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding SearchPublishers, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
 
-                <ListView Grid.Row="2" Margin="5 0 10 0" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}">
+                <ListView Grid.Row="2" Margin="5 0 10 0" ItemsSource="{Binding Publishers}" SelectedItem="{Binding SelectedPublisher}">
                     <ListView.ItemContainerStyle>
                         <Style TargetType="ListViewItem" >
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -260,7 +262,7 @@
                             <GridViewColumn Header="ID" Width="auto">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding MembershipCardId}" HorizontalAlignment="Center" Padding="5"/>
+                                        <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
@@ -276,15 +278,7 @@
                             <GridViewColumn Header="Prezime">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding Surname}" HorizontalAlignment="Center" Padding="5"/>
-                                    </DataTemplate>
-                                </GridViewColumn.CellTemplate>
-                            </GridViewColumn>
-
-                            <GridViewColumn Header="JMBG">
-                                <GridViewColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <TextBlock Text="{Binding JMBG}" HorizontalAlignment="Center" Padding="5"/>
+                                        <TextBlock Text="{Binding Address}" HorizontalAlignment="Center" Padding="5"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
@@ -297,9 +291,9 @@
         </Grid>
 
         <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Button Content="Registruj autora" Margin="10 0 0 0" Command="{Binding CreateLoan}"/>
-            <Button Content="Registruj izdavača" Margin="10 0 0 0" Command="{Binding CreateLoan}"/>
-            <Button Content="Registruj naslov" Margin="10 0 0 0" Command="{Binding CreateLoan}"/>
+            <Button Content="Registruj autora" Margin="10 0 0 0" Command="{Binding RegisterAuthor}"/>
+            <Button Content="Registruj izdavača" Margin="10 0 0 0" Command="{Binding RegisterPublisher}"/>
+            <Button Content="Registruj naslov" Margin="10 0 0 0" Command="{Binding RegisterTitle}"/>
         </StackPanel>
 
     </Grid>
