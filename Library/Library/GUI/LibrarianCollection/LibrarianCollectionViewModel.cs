@@ -13,9 +13,11 @@ namespace Library.GUI.LibrarianCollection
     public class LibrarianCollectionViewModel : ViewModelBase
     {
         private readonly User _user;
-
+        public ICommand OpenRegisterBookTitle { get; }
+        public ICommand OpenRegisterBookCopy { get; }
         public ICommand OpenBookLoaning { get; }
         public ICommand OpenBookRetrieval { get; }
+        public ICommand OpenReport { get; }
 
         public LibrarianCollectionViewModel(User user)
         {
