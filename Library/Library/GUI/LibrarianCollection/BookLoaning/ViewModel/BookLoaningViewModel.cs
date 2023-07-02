@@ -1,6 +1,7 @@
 ﻿using Library.Commands;
 using Library.Core.Model;
 using Library.Core.Service;
+using Library.GUI.LibrarianCollection.BookLoaning.Command;
 using Library.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -109,13 +110,14 @@ namespace Library.GUI.LibrarianCollection.BookLoaning.ViewModel
             _loaningService = loaningService;
             _members = new ObservableCollection<PersonMembershipCardViewModel>();
             _bookCopies = new ObservableCollection<BookCopyViewModel>();
+            CreateLoan = new CreateLoanCommand(this, loaningService);
             LoadAllMembers();
             LoadAllBookCopies();
             PropertyChanged += OnPropertyChanged;
-            //CreateLoan = new CreateLoanCommand(this, loaningService);
+            CreateLoan.ExcecutionCompleted += ExecutionCompleted;
         }
 
-        private void LoadAllBookCopies()
+        private void LoadAllMembers()
         {
             _members.Clear();
             foreach (PersonMembershipCardDTO member in _membersService.GetAllPersonMembershipCardDTOs().Values)
@@ -124,7 +126,7 @@ namespace Library.GUI.LibrarianCollection.BookLoaning.ViewModel
             }
         }
 
-        private void LoadAllMembers()
+        public void LoadAllBookCopies()
         {
             _bookCopies.Clear();
             foreach (BookCopy bookCopy in _loaningService.GetAllAvaliableBooks().Values)
