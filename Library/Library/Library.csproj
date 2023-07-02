@@ -364,6 +364,8 @@
 
   <ItemGroup>
     <Folder Include="Data\" />
+    <Folder Include="GUI\LibrarianCollection\BookLoaning\Command\" />
+    <Folder Include="GUI\LibrarianCollection\BookLoaning\View\" />
   </ItemGroup>
 
 </Project>

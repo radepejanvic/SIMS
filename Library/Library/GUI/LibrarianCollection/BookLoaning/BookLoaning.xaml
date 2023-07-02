@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library.GUI.LibrarianCollection.BookLoaning"
+        xmlns:viewmodel="clr-namespace:Library.GUI.LibrarianCollection.BookLoaning.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewmodel:BookLoaningViewModel}"
         mc:Ignorable="d"
         Title="BookLoaning" Height="450" Width="800">
     <Grid Background="BlanchedAlmond">
@@ -66,7 +68,7 @@
                     Text="{Binding SearchMembers}"/>
             </Grid>
 
-            <ListView Grid.Column="0" Grid.Row="1" Margin="10 0 5 0" ItemsSource="{Binding DoctorRefferals}" SelectedItem="{Binding SelectedDoctorRefferal}">
+            <ListView Grid.Column="0" Grid.Row="1" Margin="10 0 5 0" ItemsSource="{Binding BookCopies}" SelectedItem="{Binding SelectedBookCopy}">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem" >
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -83,34 +85,26 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="ID Doktora" >
+                        <GridViewColumn Header="ISBN" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding DoctorId}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock Text="{Binding ISBN}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Specijalizacija" >
+                        <GridViewColumn Header="Inventarni broj" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Specialization}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock Text="{Binding InventoryNumber}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Trajanje">
+                        <GridViewColumn Header="Cena">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Duration}" HorizontalAlignment="Center" Padding="5"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-
-                        <GridViewColumn Header="Vrsta" Width="160">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding IsOperation}" Foreground="Red" Width="auto" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -119,7 +113,7 @@
                 </ListView.View>
             </ListView>
 
-            <ListView Grid.Column="1"  Grid.Row="1" Margin="5 0 10 0" ItemsSource="{Binding HospitalRefferals}" SelectedItem="{Binding SelectedHospitalRefferal}">
+            <ListView Grid.Column="1"  Grid.Row="1" Margin="5 0 10 0" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem" >
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -131,23 +125,31 @@
                         <GridViewColumn Header="ID" Width="auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock Text="{Binding MembershipCardId}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Trajanje" >
+                        <GridViewColumn Header="Ime" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Duration}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Dodatna Ispitivanja">
+                        <GridViewColumn Header="Prezime">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding AdditionalAnalysis}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock Text="{Binding Surname}" HorizontalAlignment="Center" Padding="5"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="JMBG">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding JMBG}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
