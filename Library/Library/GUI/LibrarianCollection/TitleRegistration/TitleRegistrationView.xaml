@@ -220,10 +220,10 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="Ovo treba da bude checkbox">
+                            <GridViewColumn Header="Odabrani autori">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <TextBlock Text="{Binding IsSelected}" HorizontalAlignment="Center" Padding="5"/>
+                                        <CheckBox IsChecked="{Binding IsSelected, Mode=OneWay}"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
