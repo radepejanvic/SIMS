@@ -47,7 +47,7 @@
                     Grid.Column="1"
                     Margin="10"
                     VerticalAlignment="Center"
-                    Text="{Binding SearchBookCopies}"/>
+                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <Grid Grid.Row="0" Grid.Column="1">
@@ -65,7 +65,7 @@
                     Grid.Column="1"
                     Margin="10"
                     VerticalAlignment="Center"
-                    Text="{Binding SearchMembers}"/>
+                    Text="{Binding SearchMembers, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <ListView Grid.Column="0" Grid.Row="1" Margin="10 0 5 0" ItemsSource="{Binding BookCopies}" SelectedItem="{Binding SelectedBookCopy}">
