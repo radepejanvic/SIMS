@@ -26,11 +26,11 @@
         <!-- Dugmad -->
         <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10" 
                     HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Registruj naslov" Margin="25" Command="{Binding OpenRegisterBookTitle}"/>
-            <Button Content="Registruj primerak" Margin="25" Command="{Binding OpenRegisterBookCopy}"/>
+            <Button Content="Registruj naslov" Margin="25" Command="{Binding OpenTitleRegistration}"/>
+            <Button Content="Registruj primerak" Margin="25" Command="{Binding OpenCopyRegistration}"/>
             <Button Content="Iznajmi knjigu" Margin="25" Command="{Binding OpenBookLoaning}"/>
             <Button Content="Vrati knjigu" Margin="25" Command="{Binding OpenBookRetrieval}"/>
-            <Button Content="Izvestaj" Margin="25" Command="{Binding OpenReport}"/>
+            <Button Content="Izvestaj" Margin="25" Command="{Binding OpenReports}"/>
         </StackPanel>
     </Grid>
 </UserControl>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Library.GUI.LibrarianCollection.BookLoaning
 {
     /// <summary>
-    /// Interaction logic for BookLoaning.xaml
+    /// Interaction logic for BookLoaningView.xaml
     /// </summary>
-    public partial class BookLoaning : Window
+    public partial class BookLoaningView : Window
     {
-        public BookLoaning()
+        public BookLoaningView()
         {
             InitializeComponent();
         }
