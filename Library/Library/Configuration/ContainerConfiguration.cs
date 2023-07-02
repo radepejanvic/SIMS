@@ -97,6 +97,7 @@ namespace Library.Configuration
             builder.RegisterType<LoginService>().As<ILoginService>();
             builder.RegisterType<MembersService>().As<IMembersService>();
             builder.RegisterType<LoaningService>().As<ILoaningService>();
+            builder.RegisterType<BookCollectionService>().As<IBookCollectionService>();
 
             return builder.Build();
         }
