@@ -3,10 +3,304 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Library.GUI.LibrarianCollection.TitleRegistration"
         mc:Ignorable="d"
-        Title="TitleRegistrationView" Height="450" Width="800">
-    <Grid>
-        
+        Title="TitleRegistrationView" Height="600" Width="700">
+    <Grid Background="BlanchedAlmond">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+        Grid.Row="0"
+        Text="Registracija naslova"
+        Margin="15"
+        VerticalAlignment="Center"
+        Style="{StaticResource Header}" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Forma podataka o naslovu"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Registrovani autori"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+                <TextBox
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Text="{Binding SearchMembers, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Naziv naslova: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Godina izdanja: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <xctk:TimePicker 
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Height="20"
+                    Width="140"
+                    Format="Custom" x:Name="fromDTP"
+                    FormatString="dd/MM/yyyy HH:mm"
+                    Text="{Binding From}" 
+                    StartTime="08:00"
+                    EndTime="20:00"/>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="Kratak opis: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Height="100"
+                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Text="Jezik: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <ComboBox 
+                    Grid.Column="1"
+                    Grid.Row="3"
+                    ItemsSource="{Binding AvaliableAlergies}" 
+                    SelectedItem="{Binding SelectedAlergy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    Margin="15"
+                    Width="140"
+                    Height="20"/>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Text="Koričenje: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <ComboBox 
+                    Grid.Column="1"
+                    Grid.Row="4"
+                    ItemsSource="{Binding AvaliableAlergies}" 
+                    SelectedItem="{Binding SelectedAlergy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    Margin="15"
+                    Width="140"
+                    Height="20"/>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Text="ISBN: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="6"
+                    Text="UDK: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="6"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding SearchBookCopies, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <ListView Grid.Row="0" Margin="5 0 10 0" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem" >
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Header="ID" Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding MembershipCardId}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Ime" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Prezime">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Surname}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="JMBG">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding JMBG}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock
+                    Grid.Column="0"
+                    Text="Registrovani izdavači"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+                    <TextBox
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Text="{Binding SearchMembers, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+
+                <ListView Grid.Row="2" Margin="5 0 10 0" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem" >
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Header="ID" Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding MembershipCardId}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Ime" >
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Prezime">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Surname}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="JMBG">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding JMBG}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            
+        </Grid>
+
+        <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Registruj autora" Margin="10 0 0 0" Command="{Binding CreateLoan}"/>
+            <Button Content="Registruj izdavača" Margin="10 0 0 0" Command="{Binding CreateLoan}"/>
+            <Button Content="Registruj naslov" Margin="10 0 0 0" Command="{Binding CreateLoan}"/>
+        </StackPanel>
+
     </Grid>
 </Window>
