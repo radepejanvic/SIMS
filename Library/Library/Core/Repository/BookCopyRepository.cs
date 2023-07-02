@@ -42,5 +42,12 @@ namespace Library.Core.Repository
         {
             return _repo.GetAll();
         }
+
+        public Dictionary<int, BookCopy> GetAllAvaliableBooks(List<string> loanedBooks)
+        {
+            return _repo.GetAll().Values
+                .Where(bookCopy => !loanedBooks.Contains(bookCopy.InventoryNumber))
+                .ToDictionary(bookCopy => bookCopy.Id, bookCopy => bookCopy);
+        }
     }
 }
