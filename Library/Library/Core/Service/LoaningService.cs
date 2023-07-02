@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Library.Core.Service
 {
-    public class LoaningService
+    public class LoaningService : ILoaningService
     {
         private readonly IMembershipCardRepository _membershipCardRepo;
         private readonly IMembershipRepository _membershipRepo;
@@ -16,7 +16,7 @@ namespace Library.Core.Service
         private readonly ILoanRepository _loanRepo;
 
 
-        public LoaningService(IMembershipCardRepository membershipCardRepo, ILoanRepository loanRepo, IBookCopyRepository bookCopyRepo, IMembershipRepository membershipRepo) 
+        public LoaningService(IMembershipCardRepository membershipCardRepo, ILoanRepository loanRepo, IBookCopyRepository bookCopyRepo, IMembershipRepository membershipRepo)
         {
             _membershipCardRepo = membershipCardRepo;
             _loanRepo = loanRepo;

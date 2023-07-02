@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Library.Core.Service
 {
-    public class MembersService
+    public class MembersService : IMembersService
     {
         public readonly IMembershipCardRepository _membershipCardRepo;
         public readonly IMembershipCardRepository _membershipRepo;
@@ -21,9 +21,10 @@ namespace Library.Core.Service
             _personRepo = personRepo;
         }
 
-        //public Dictionary<int, PersonMembershipCardDTO> GetAllPersonMembershipCardDTOs()
-        //{
-            
-        //}
+        public Dictionary<int, PersonMembershipCardDTO> GetAllPersonMembershipCardDTOs()
+        {
+            return _membershipCardRepo.GetAll().Values
+                .ToDictionary(member => member.Id, member => new PersonMembershipCardDTO(member, _personRepo.Get(member.PersonId)));
+        }
     }
 }
