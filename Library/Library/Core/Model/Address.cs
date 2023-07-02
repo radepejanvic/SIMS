@@ -28,5 +28,10 @@ namespace Library.Core.Model
             PostalCode = postalCode;
             Country = country;
         }
+
+        public override string ToString()
+        {
+            return $"{Street} {Number}, {City} {PostalCode}, {Country}";
+        }
     }
 }
