@@ -15,6 +15,7 @@ namespace Library.GUI.LibrarianCollection.TitleRegistration.ViewModel
         public int Id => _author.Id;
         public string Name => _author.Name;
         public string Surname => _author.Surname;
+        public bool IsSelected => false;
 
         public AuthorViewModel(Author author)
         {
