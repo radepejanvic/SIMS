@@ -7,7 +7,7 @@
              d:DataContext="{d:DesignInstance Type=librarianCollection:LibrarianCollectionViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="LightBlue">
+    <Grid Background="BlanchedAlmond">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

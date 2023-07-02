@@ -10,7 +10,7 @@ namespace Library.Core.Model
     public class Loan : ISerializable
     {
         public int Id { get; set; }
-        public int BookCopyId;
+        public string InventoryNumber;
         public int MembershipCardId;
         public DateTime ExpirationDate;
         public DateTime? RetrievalDate;
@@ -20,9 +20,9 @@ namespace Library.Core.Model
             
         }
 
-        public Loan(int bookCopyId, int membershipCardId, DateTime expirationDate, DateTime? retrievalDate)
+        public Loan(string inventoryNumber, int membershipCardId, DateTime expirationDate, DateTime? retrievalDate)
         {
-            BookCopyId = bookCopyId;
+            InventoryNumber = inventoryNumber;
             MembershipCardId = membershipCardId;
             ExpirationDate = expirationDate;
             RetrievalDate = retrievalDate;

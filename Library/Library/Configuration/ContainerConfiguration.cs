@@ -14,6 +14,7 @@ using Library.Core.Model;
 using Library.Core.Repository;
 using Library.Core.Repository.Interface;
 using Library.GUI.Helpers.Generator;
+using Library.Core.Service;
 
 namespace Library.Configuration
 {
@@ -93,6 +94,8 @@ namespace Library.Configuration
             builder.RegisterType<PublisherRepository>().As<IPublisherRepository>();
 
             builder.RegisterType<LoginService>().As<ILoginService>();
+            builder.RegisterType<MembersService>().As<IMembersService>();
+            builder.RegisterType<LoaningService>().As<ILoaningService>();
 
             return builder.Build();
         }

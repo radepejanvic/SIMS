@@ -8,6 +8,7 @@ namespace Library.Core.Repository.Interface
         void Add(BookCopy bookCopy);
         BookCopy Get(int id);
         Dictionary<int, BookCopy> GetAll();
+        Dictionary<int, BookCopy> GetAllAvaliableBooks(List<string> loanedBooks);
         void Remove(int id);
         void Update(BookCopy bookCopy);
     }

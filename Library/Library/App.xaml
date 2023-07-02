@@ -14,8 +14,14 @@
         <Style TargetType="Button">
             <Setter Property="Padding" Value="10 5"/>
             <Setter Property="Focusable" Value="True"/>
+            <Setter Property="Background" Value="BurlyWood"/>
+            <Setter Property="BorderBrush" Value="BurlyWood"/>
         </Style>
 
+        <Style TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="BurlyWood"/>
+        </Style>
+        
         <Style TargetType="TextBlock" x:Key="Header">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
