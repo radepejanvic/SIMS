@@ -12,12 +12,14 @@ namespace Library.Core.Model
         public int MembershipCardId;
         public string Name;
         public string Surname;
+        public string JMBG;
 
         public PersonMembershipCardDTO(MembershipCard memberhipCard, Person person)
         {
             MembershipCardId = memberhipCard.Id;
             Name = person.Name;
             Surname = person.Surname;
+            JMBG = person.JMBG;
         }
     }
 }
