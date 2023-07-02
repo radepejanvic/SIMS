@@ -37,7 +37,7 @@ namespace Library
                 var userGenerator = scope.Resolve<IUserGenerator>();
                 //userGenerator.GenerateUsers(5, 10);
                 //userGenerator.GenerateMemberships();
-                //userGenerator.GenerateMembershipCards(7, 10);
+                //userGenerator.GenerateMembershipCards(1, 10);
 
                 //var bookGenerator = scope.Resolve<IBookGenerator>();
                 //bookGenerator.GenerateLibraryCollection();
