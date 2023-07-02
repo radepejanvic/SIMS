@@ -38,6 +38,11 @@ namespace Library.Core.Repository
             return _repo.Get(id);
         }
 
+        public Dictionary<int, Loan> GetAll()
+        {
+            return _repo.GetAll();
+        }
+
         //public Dictionary<int, Loan> GetAll(int bookCopyId)
         //{
         //    return _repo.GetAll().Values
@@ -45,14 +50,21 @@ namespace Library.Core.Repository
         //        .ToDictionary(loan => loan.Id, loan => loan);
         //}
 
-        //public bool IsAvaliable(int bookCopyId)
-        //{
-
-        //}
-
-        public Dictionary<int, Loan> GetAll()
+        public List<string> GetAllLoanedBooks()
         {
-            return _repo.GetAll();
+            return _repo.GetAll().Values
+                .Where(loan => loan.RetrievalDate is null)
+                .Select(loan => loan.InventoryNumber)
+                .ToList();
         }
+
+        public int GetNumberOfActiveLoans(int membershipCardId)
+        {
+            return _repo.GetAll().Values
+                .Where(loan => loan.MembershipCardId == membershipCardId && loan.RetrievalDate is null)
+                .ToList().Count;
+        }
+
+
     }
 }
