@@ -1,5 +1,6 @@
 ﻿using Library.Core.Model;
 using Library.Core.Repository.Interface;
+using Library.Core.Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;

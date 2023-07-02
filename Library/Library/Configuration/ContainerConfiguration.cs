@@ -15,6 +15,7 @@ using Library.Core.Repository;
 using Library.Core.Repository.Interface;
 using Library.GUI.Helpers.Generator;
 using Library.Core.Service;
+using Library.Core.Service.Interface;
 
 namespace Library.Configuration
 {

@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Library.Configuration;
 using Library.Core.Model;
-using Library.Core.Service;
+using Library.Core.Service.Interface;
 using Library.Core.TehnicalService.Interface;
 using Library.GUI.LibrarianCollection.Commands;
 using Library.Service.TehnicalService;
