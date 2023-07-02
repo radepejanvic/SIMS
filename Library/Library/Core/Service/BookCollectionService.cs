@@ -41,5 +41,15 @@ namespace Library.Core.Service
         {
             _bookCopyRepo.Add(bookCopy);
         }
+
+        public Dictionary<int, Author> GetAllAuthors()
+        {
+            return _authorRepo.GetAll();
+        }
+
+        public Dictionary<int, Publisher> GetAllPublishers()
+        {
+            return _publisherRepo.GetAll();
+        }
     }
 }
