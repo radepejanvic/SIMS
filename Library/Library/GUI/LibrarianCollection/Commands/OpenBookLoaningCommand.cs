@@ -1,5 +1,7 @@
 ﻿using Library.Commands;
+using Library.Core.Service;
 using Library.GUI.LibrarianCollection.BookLoaning;
+using Library.GUI.LibrarianCollection.BookLoaning.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,12 @@ namespace Library.GUI.LibrarianCollection.Commands
 {
     public class OpenBookLoaningCommand : CommandBase
     {
-        public OpenBookLoaningCommand() 
+        private readonly IMembersService _membersService;
+        private readonly ILoaningService _loaningService;
+        public OpenBookLoaningCommand(IMembersService membersService, ILoaningService loaningService) 
         {
-
+            _membersService = membersService;
+            _loaningService = loaningService;
         }
 
         public override bool CanExecute(object? parameter)
@@ -23,7 +28,7 @@ namespace Library.GUI.LibrarianCollection.Commands
         public override void Execute(object? parameter)
         {
             var popup = new BookLoaningView();
-            popup.DataContext = new BookLoaningViewModel();
+            popup.DataContext = new BookLoaningViewModel(_membersService, _loaningService);
             popup.ShowDialog();
         }
     }

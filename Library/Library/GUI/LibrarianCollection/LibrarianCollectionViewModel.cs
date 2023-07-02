@@ -1,5 +1,10 @@
-﻿using Library.Core.Model;
+﻿using Autofac;
+using Library.Configuration;
+using Library.Core.Model;
+using Library.Core.Service;
+using Library.Core.TehnicalService.Interface;
 using Library.GUI.LibrarianCollection.Commands;
+using Library.Service.TehnicalService;
 using Library.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -20,13 +25,23 @@ namespace Library.GUI.LibrarianCollection
         public ICommand OpenBookRetrieval { get; }
         public ICommand OpenReports { get; }
 
+        private readonly IMembersService _membersService;
+        private readonly ILoaningService _loaningService;
+
         public LibrarianCollectionViewModel(User user)
         {
-            _user = user;
+            var container = ContainerConfiguration.Configure();
+
+            using (var scope = container.BeginLifetimeScope())
+            {
+                _membersService = scope.Resolve<IMembersService>();
+                _loaningService = scope.Resolve<ILoaningService>();
+            }
+                _user = user;
 
             OpenTitleRegistration = new OpenTitleRegistrationCommand();
             OpenCopyRegistration = new OpenCopyRegistrationCommand();
-            OpenBookLoaning = new OpenBookLoaningCommand();
+            OpenBookLoaning = new OpenBookLoaningCommand(_membersService, _loaningService);
             OpenBookRetrieval = new OpenBookRetrievalCommand();
             OpenReports = new OpenReportsCommand();
         }
