@@ -15,11 +15,11 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Center" Margin="0,30,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Arial Rounded MT Bold" Text="                   USER LOGIN"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,30,0,0" Grid.Row="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" FontFamily="Arial Rounded MT Bold" Text="             PRIJAVA KORISNIKA"/>
         
         <TextBox x:Name="koeisnicko_ime" Grid.Row="3" Width="200" Height="30" Margin="99,63,101,25" BorderThickness="0,0,0,2" TextAlignment="Center" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
         <TextBox Grid.Row="3" Width="200" Height="30" Margin="100,119,100,-31" BorderThickness="0,0,0,2" TextAlignment="Center" Text="{Binding Password,UpdateSourceTrigger=PropertyChanged}"/>
 
-        <Button Grid.Row="3" Width="100" Height="30" Margin="150,171,150,-83" Content="LOGIN" FontFamily="Arial Rounded MT Bold" Command="{Binding SubmitCommand}"/>
+        <Button Grid.Row="3" Width="100" Height="30" Margin="150,171,150,-83" Content="PRIJAVA" FontFamily="Arial Rounded MT Bold" Command="{Binding SubmitCommand}"/>
     </Grid>
 </UserControl>
