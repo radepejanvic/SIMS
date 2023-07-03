@@ -49,5 +49,11 @@ namespace Library.Core.Repository
                 .Where(bookCopy => !loanedBooks.Contains(bookCopy.InventoryNumber))
                 .ToDictionary(bookCopy => bookCopy.Id, bookCopy => bookCopy);
         }
+
+        public BookCopy? Get(string inventoryNumber)
+        {
+            return _repo.GetAll().Values
+                .FirstOrDefault(bookCopy => bookCopy.InventoryNumber == inventoryNumber);
+        }
     }
 }
