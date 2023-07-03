@@ -20,5 +20,10 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
         {
             _branch = branch;
         }
+
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }
