@@ -16,17 +16,19 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
 {
     public class CopyRegistrationViewModel : ViewModelBase
     {
-		private int _branchId;
-		public int BranchId
+		public ObservableCollection<LibraryBranchViewModel> Branches;
+
+		private LibraryBranchViewModel _selectedBranch;
+		public LibraryBranchViewModel SelectedBranch
 		{
 			get
 			{
-				return _branchId;
+				return _selectedBranch;
 			}
 			set
 			{
-				_branchId = value;
-				OnPropertyChanged(nameof(BranchId));
+				_selectedBranch = value;
+				OnPropertyChanged(nameof(SelectedBranch));
 			}
 		}
 

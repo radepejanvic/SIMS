@@ -4,9 +4,193 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library.GUI.LibrarianCollection.CopyRegistration"
+        xmlns:viewmodel="clr-namespace:Library.GUI.LibrarianCollection.CopyRegistration"
+        d:DataContext="{d:DesignInstance Type=viewmodel:CopyRegistrationViewModel}"
         mc:Ignorable="d"
         Title="CopyRegistrationView" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Background="BlanchedAlmond">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+        Grid.Row="0"
+        Text="Registracija naslova"
+        Margin="15"
+        VerticalAlignment="Center"
+        Style="{StaticResource Header}" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Forma podataka o primerku"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Registrovani naslovi"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+                <TextBox
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Text="{Binding SearchAuthors, UpdateSourceTrigger=PropertyChanged}"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="Inventarni broj:"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding InventoryNumber}"/>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Ogranak:"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+
+                <ComboBox 
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    ItemsSource="{Binding Branches}" 
+                    SelectedItem="{Binding SelectedBranch, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                    Margin="15"
+                    Width="140"
+                    Height="20"/>
+
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="Nabavna cena:"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding Price}"/>
+            </Grid>
+
+            <ListView Grid.Row="1" Grid.Column="1" Margin="5 0 10 0" ItemsSource="{Binding Titles}" SelectedItem="{Binding SelectedTitle}">
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem" >
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.View>
+                    <GridView>
+
+                        <GridViewColumn Header="ID" Width="auto">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Naslov" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" Padding="5"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Godina izdanja">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding PublicationYear}" HorizontalAlignment="Center" Padding="5"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Jezik">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Language}" HorizontalAlignment="Center" Padding="5"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="Koričenje">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding Cover}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="ISBN">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding ISBN}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="UDK">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding UDK}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Grid>
+
+        <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Registruj primerak" Margin="10 0 0 0" Command="{Binding RegisterCopy}"/>
+        </StackPanel>
+
     </Grid>
 </Window>
