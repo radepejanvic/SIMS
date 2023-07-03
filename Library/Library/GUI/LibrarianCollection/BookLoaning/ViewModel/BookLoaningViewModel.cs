@@ -1,6 +1,6 @@
 ﻿using Library.Commands;
 using Library.Core.Model;
-using Library.Core.Service;
+using Library.Core.Service.Interface;
 using Library.GUI.LibrarianCollection.BookLoaning.Command;
 using Library.ViewModel;
 using System;

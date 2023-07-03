@@ -97,5 +97,16 @@
     "ISBN": "gpDKPjfxuJCZs",
     "UDK": "o69el2bv",
     "Id": 9
+  },
+  "10": {
+    "PublisherId": 1,
+    "Title": "Ivica i Marica",
+    "PublicationYear": "1930-01-01T00:00:00",
+    "Description": "Prica o bratu i sestri koji su se izgubili u sumi.",
+    "Language": 0,
+    "Cover": 0,
+    "ISBN": "1231231231231",
+    "UDK": "1231231231",
+    "Id": 10
   }
 }

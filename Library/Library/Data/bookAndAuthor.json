@@ -88,5 +88,15 @@
     "BookId": 9,
     "AuthorId": 9,
     "Id": 18
+  },
+  "19": {
+    "BookId": 0,
+    "AuthorId": 1,
+    "Id": 19
+  },
+  "20": {
+    "BookId": 0,
+    "AuthorId": 2,
+    "Id": 20
   }
 }
