@@ -42,5 +42,17 @@ namespace Library.Core.Repository
         {
             return _repo.GetAll();
         }
+
+        public BookTitle? GetByISBN(string ISBN)
+        {
+            return _repo.GetAll().Values
+                .FirstOrDefault(user => user.ISBN == ISBN);
+        }
+
+        public BookTitle? GetByUDK(string UDK)
+        {
+            return _repo.GetAll().Values
+                .FirstOrDefault(user => user.UDK == UDK);
+        }
     }
 }
