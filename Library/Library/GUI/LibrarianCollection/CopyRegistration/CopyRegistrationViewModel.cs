@@ -6,7 +6,9 @@ using Library.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -84,6 +86,20 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
 			}
 		}
 
+		private string _searchTitles;
+		public string SearchTitles
+		{
+			get
+			{
+				return _searchTitles;
+			}
+			set
+			{
+				_searchTitles = value;
+				OnPropertyChanged(nameof(SearchTitles));
+			}
+		}
+
 		public CommandBase RegisterCopy { get; }
 
 		private readonly IBookCollectionService _bookCollectionService;
@@ -94,6 +110,7 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
 			_titles = new();
 			//RegisterCopy = new RegisterCopyCommand(this, bookCollectionService);
 			LoadTitles();
+            PropertyChanged += OnPropertyChanged;
         }
 
 		private void LoadTitles()
@@ -105,6 +122,26 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
             }
         }
 
+        private void OnPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(SearchTitles) && !string.IsNullOrEmpty(SearchTitles))
+            {
+                var filtered = _titles.Where(title => title.Contains(SearchTitles)).ToList();
+                CopyFilteredTitles(filtered);
+            }
+            else if (e.PropertyName == nameof(SearchTitles))
+            {
+                LoadTitles();
+            }
+        }
 
+        private void CopyFilteredTitles(List<BookTitleViewModel> filtered)
+        {
+            _titles.Clear();
+            foreach (BookTitleViewModel title in filtered)
+            {
+                _titles.Add(title);
+            }
+        }
     }
 }
