@@ -1,5 +1,5 @@
 ﻿using Library.Commands;
-using Library.Core.Service;
+using Library.Core.Service.Interface;
 using Library.GUI.LibrarianCollection.BookLoaning.ViewModel;
 using System;
 using System.Collections.Generic;

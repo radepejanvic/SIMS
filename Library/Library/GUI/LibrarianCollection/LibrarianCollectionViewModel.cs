@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Library.Configuration;
 using Library.Core.Model;
-using Library.Core.Service;
+using Library.Core.Service.Interface;
 using Library.Core.TehnicalService.Interface;
 using Library.GUI.LibrarianCollection.Commands;
 using Library.Service.TehnicalService;
@@ -27,7 +27,7 @@ namespace Library.GUI.LibrarianCollection
 
         private readonly IMembersService _membersService;
         private readonly ILoaningService _loaningService;
-
+        private readonly IBookCollectionService _bookCollectionService;
         public LibrarianCollectionViewModel(User user)
         {
             var container = ContainerConfiguration.Configure();
@@ -36,10 +36,11 @@ namespace Library.GUI.LibrarianCollection
             {
                 _membersService = scope.Resolve<IMembersService>();
                 _loaningService = scope.Resolve<ILoaningService>();
+                _bookCollectionService = scope.Resolve<IBookCollectionService>();
             }
                 _user = user;
 
-            OpenTitleRegistration = new OpenTitleRegistrationCommand();
+            OpenTitleRegistration = new OpenTitleRegistrationCommand(_bookCollectionService);
             OpenCopyRegistration = new OpenCopyRegistrationCommand();
             OpenBookLoaning = new OpenBookLoaningCommand(_membersService, _loaningService);
             OpenBookRetrieval = new OpenBookRetrievalCommand();
