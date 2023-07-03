@@ -51,5 +51,10 @@ namespace Library.Core.Service
         {
             return _publisherRepo.GetAll();
         }
+
+        public Dictionary<int, BookTitle> GetAllTitles()
+        {
+            return _booktitleRepo.GetAll();
+        }
     }
 }
