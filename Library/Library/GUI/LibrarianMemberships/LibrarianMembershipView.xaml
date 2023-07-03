@@ -6,7 +6,26 @@
              xmlns:local="clr-namespace:Library.GUI.LibrarianMemberships"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-        
+    <Grid Background="BlanchedAlmond">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Naslov "Doktor" -->
+        <TextBlock
+            Grid.Row="0"
+            Text="Bibliotekar clanova"
+            Margin="15"
+            VerticalAlignment="Center"
+            Style="{StaticResource Header}" />
+
+        <!-- Dugmad -->
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="10" 
+                    HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Registruj clana" Margin="25" Command="{Binding OpenUserRegistration}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
