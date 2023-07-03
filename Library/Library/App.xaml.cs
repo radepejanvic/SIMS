@@ -41,6 +41,7 @@ namespace Library
 
                 var bookGenerator = scope.Resolve<IBookGenerator>();
                 //bookGenerator.GenerateLibraryCollection();
+                //bookGenerator.GenerateBranches();
 
             }
 
