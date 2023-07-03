@@ -17,14 +17,18 @@ namespace Library.Core.Service
         private readonly IAuthorRepository _authorRepo;
         private readonly IPublisherRepository _publisherRepo;
         private readonly IBookAndAuthorRepository _bookAndAuthorRepo;
+        private readonly ILibraryBranchRepository _libraryBranchRepo;
 
-        public BookCollectionService(IBookTitleRepository booktitleRepo, IBookCopyRepository bookCopyRepo, IAuthorRepository authorRepo, IPublisherRepository publisherRepo, IBookAndAuthorRepository bookAndAuthorRepo)
+        public BookCollectionService(IBookTitleRepository booktitleRepo, IBookCopyRepository bookCopyRepo,
+            IAuthorRepository authorRepo, IPublisherRepository publisherRepo, IBookAndAuthorRepository bookAndAuthorRepo,
+            ILibraryBranchRepository libraryBranchRepo)
         {
             _booktitleRepo = booktitleRepo;
             _bookCopyRepo = bookCopyRepo;
             _authorRepo = authorRepo;
             _publisherRepo = publisherRepo;
             _bookAndAuthorRepo = bookAndAuthorRepo;
+            _libraryBranchRepo = libraryBranchRepo;
         }
 
         public void RegisterBookTitle(List<int> authors, BookTitle bookTitle)
@@ -55,6 +59,11 @@ namespace Library.Core.Service
         public Dictionary<int, BookTitle> GetAllTitles()
         {
             return _booktitleRepo.GetAll();
+        }
+
+        public Dictionary<int, LibraryBranch> GetAllBranches()
+        {
+            return _libraryBranchRepo.GetAll();
         }
     }
 }
