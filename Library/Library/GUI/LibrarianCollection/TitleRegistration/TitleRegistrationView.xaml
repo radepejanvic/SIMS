@@ -102,9 +102,7 @@
                     Width="140"
                     Format="Custom" x:Name="fromDTP"
                     FormatString="yyyy."
-                    Text="{Binding PublicationYear}" 
-                    StartTime="08:00"
-                    EndTime="20:00"/>
+                    Text="{Binding PublicationYear}"/>
                 <TextBlock
                     Grid.Column="0"
                     Grid.Row="2"
@@ -223,7 +221,7 @@
                             <GridViewColumn Header="Odabrani autori">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <CheckBox IsChecked="{Binding IsSelected, Mode=OneWay}"/>
+                                        <CheckBox IsChecked="{Binding IsSelected}"/>
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
