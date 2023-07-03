@@ -113,7 +113,7 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
 			//RegisterCopy = new RegisterCopyCommand(this, bookCollectionService);
 			LoadTitles();
             PropertyChanged += OnPropertyChanged;
-			RegisterCopy.ExcecutionCompleted += ExecutionCompleted;
+			//RegisterCopy.ExcecutionCompleted += ExecutionCompleted;
         }
 
 		private void LoadTitles()

@@ -56,7 +56,7 @@
                     Grid.Column="1"
                     Margin="10"
                     VerticalAlignment="Center"
-                    Text="{Binding SearchAuthors, UpdateSourceTrigger=PropertyChanged}"/>
+                    Text="{Binding SearchTitles, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="0">
@@ -161,7 +161,7 @@
                         <GridViewColumn Header="Koričenje">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox IsChecked="{Binding Cover}"/>
+                                    <TextBlock Text="{Binding Cover}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -169,7 +169,7 @@
                         <GridViewColumn Header="ISBN">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox IsChecked="{Binding ISBN}"/>
+                                    <TextBlock Text="{Binding ISBN}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -177,7 +177,7 @@
                         <GridViewColumn Header="UDK">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <CheckBox IsChecked="{Binding UDK}"/>
+                                    <TextBlock Text="{Binding UDK}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
