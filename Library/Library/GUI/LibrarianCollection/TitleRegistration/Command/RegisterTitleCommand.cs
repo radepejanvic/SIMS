@@ -30,6 +30,8 @@ namespace Library.GUI.LibrarianCollection.TitleRegistration.Command
             return (_titleRegistrationViewModel.SelectedPublisher is not null) &&
             BookValidator.CheckAuthors(_titleRegistrationViewModel.GetAllSelectedAuthors()) &&
             BookValidator.CheckISBN(_titleRegistrationViewModel.ISBN) &&
+            _bookCollectionService.IsUniqueISBN(_titleRegistrationViewModel.ISBN) &&
+            _bookCollectionService.IsUniqueUDK(_titleRegistrationViewModel.UDK) &&
             BookValidator.CheckPublicationYear(_titleRegistrationViewModel.PublicationYear) &&
             (!string.IsNullOrEmpty(_titleRegistrationViewModel.Title)) &&
             (!string.IsNullOrEmpty(_titleRegistrationViewModel.Description));
