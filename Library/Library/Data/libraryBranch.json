@@ -1,0 +1,20 @@
+{
+  "1": {
+    "Name": "Dunavska",
+    "Address": {
+      "Street": "Dunavska",
+      "Number": 1,
+      "City": "Novi Sad",
+      "PostalCode": "21000",
+      "Country": "Srbija"
+    },
+    "Librarians": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "Id": 1
+  }
+}

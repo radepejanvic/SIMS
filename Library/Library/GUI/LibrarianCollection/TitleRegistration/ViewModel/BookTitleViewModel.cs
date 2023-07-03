@@ -16,7 +16,7 @@ namespace Library.GUI.LibrarianCollection.TitleRegistration.ViewModel
 
         public int Id => _bookTitle.Id;
         public string Title => _bookTitle.Title;
-        public DateTime PublicationYear => _bookTitle.PublicationYear;
+        public string PublicationYear => _bookTitle.PublicationYear.ToString("yyyy.");
         public string Description => _bookTitle.Description;
         public Language Language => _bookTitle.Language;
         public CoverType Cover => _bookTitle.Cover;

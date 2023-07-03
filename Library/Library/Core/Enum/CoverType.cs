@@ -9,6 +9,6 @@ namespace Library.Core.Enum
 {
     public enum CoverType
     {
-        HARD, SOFT, SPIRAL
+        TVRDO, MEKO, SPIRALA
     }
 }

@@ -64,10 +64,10 @@ namespace Library.Configuration
             //builder.RegisterType<CRUDRepository<InventoryBook>>().As<ICRUDRepository<InventoryBook>>();
             //builder.RegisterType<InventoryBookRepository>().As<IInventoryBookRepository>();
 
-            //builder.RegisterType<ResourceConfigurationJSON<LibraryBranch>>().As<IResourceConfiguration<LibraryBranch>>();
-            //builder.RegisterType<SerializerJSON<LibraryBranch>>().As<ISerializer<LibraryBranch>>();
-            //builder.RegisterType<CRUDRepository<LibraryBranch>>().As<ICRUDRepository<LibraryBranch>>();
-            //builder.RegisterType<LibraryBranchRepository>().As<ILibraryBranchRepository>();
+            builder.RegisterType<ResourceConfigurationJSON<LibraryBranch>>().As<IResourceConfiguration<LibraryBranch>>();
+            builder.RegisterType<SerializerJSON<LibraryBranch>>().As<ISerializer<LibraryBranch>>();
+            builder.RegisterType<CRUDRepository<LibraryBranch>>().As<ICRUDRepository<LibraryBranch>>();
+            builder.RegisterType<LibraryBranchRepository>().As<ILibraryBranchRepository>();
 
             builder.RegisterType<ResourceConfigurationJSON<Loan>>().As<IResourceConfiguration<Loan>>();
             builder.RegisterType<SerializerJSON<Loan>>().As<ISerializer<Loan>>();

@@ -28,6 +28,7 @@ namespace Library.GUI.LibrarianCollection
         private readonly IMembersService _membersService;
         private readonly ILoaningService _loaningService;
         private readonly IBookCollectionService _bookCollectionService;
+
         public LibrarianCollectionViewModel(User user)
         {
             var container = ContainerConfiguration.Configure();
@@ -41,7 +42,7 @@ namespace Library.GUI.LibrarianCollection
                 _user = user;
 
             OpenTitleRegistration = new OpenTitleRegistrationCommand(_bookCollectionService);
-            OpenCopyRegistration = new OpenCopyRegistrationCommand();
+            OpenCopyRegistration = new OpenCopyRegistrationCommand(_bookCollectionService);
             OpenBookLoaning = new OpenBookLoaningCommand(_membersService, _loaningService);
             OpenBookRetrieval = new OpenBookRetrievalCommand();
             OpenReports = new OpenReportsCommand();

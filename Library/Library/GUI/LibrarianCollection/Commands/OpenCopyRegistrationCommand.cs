@@ -1,4 +1,5 @@
 ﻿using Library.Commands;
+using Library.Core.Service.Interface;
 using Library.GUI.LibrarianCollection.CopyRegistration;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,11 @@ namespace Library.GUI.LibrarianCollection.Commands
 {
     public class OpenCopyRegistrationCommand : CommandBase
     {
-        public OpenCopyRegistrationCommand() 
-        {
+        private readonly IBookCollectionService _bookCollectionService;
 
+        public OpenCopyRegistrationCommand(IBookCollectionService bookCollectionService) 
+        {
+            _bookCollectionService = bookCollectionService;
         }
 
         public override bool CanExecute(object? parameter)
@@ -22,8 +25,10 @@ namespace Library.GUI.LibrarianCollection.Commands
 
         public override void Execute(object? parameter)
         {
-            var popup = new CopyRegistrationView();
-            popup.DataContext = new CopyRegistrationViewModel();
+            var popup = new CopyRegistrationView
+            {
+                DataContext = new CopyRegistrationViewModel(_bookCollectionService)
+            };
             popup.ShowDialog();
         }
     }
