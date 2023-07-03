@@ -4,11 +4,13 @@ using Library.Core.Model;
 using Library.Core.Service;
 using Library.Core.Service.Interface;
 using Library.GUI.LibrarianCollection.BookLoaning.ViewModel;
+using Library.GUI.LibrarianCollection.TitleRegistration.Command;
 using Library.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -199,12 +201,13 @@ namespace Library.GUI.LibrarianCollection.TitleRegistration.ViewModel
 			_bookCollectionService = bookCollectionService;
 			_authors = new();
 			_publishers = new();
-			//RegisterTitle = new RegisterTitleCommand(this, bookCollectionService);
+			RegisterTitle = new RegisterTitleCommand(this, bookCollectionService);
 
-            LoadAuthors();
+			LoadAuthors();
 			LoadPublishers();
             PropertyChanged += OnPropertyChanged;
-        }
+			RegisterTitle.ExcecutionCompleted += ExecutionCompleted;
+		}
 
 		public void LoadAuthors()
 		{
@@ -268,6 +271,12 @@ namespace Library.GUI.LibrarianCollection.TitleRegistration.ViewModel
 		{
 			return _authors.Where(author => author.IsSelected is true).Select(author => author.Id).ToList();
 		}
+
+		public DateTime GetPublicationDate()
+		{
+            DateTime.TryParseExact(PublicationYear, "yyyy.", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime date);
+            return date;
+        }
 
     }
 }
