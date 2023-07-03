@@ -79,5 +79,14 @@
     "Price": 691.0,
     "ArrivalDate": "2023-07-02T00:00:00+02:00",
     "Id": 9
+  },
+  "10": {
+    "BookTitleId": 6,
+    "BranchId": 1,
+    "ISBN": "z3ygRIuHOIzQA",
+    "InventoryNumber": "123123",
+    "Price": 1200.0,
+    "ArrivalDate": "2023-07-03T13:26:59.3962283+02:00",
+    "Id": 10
   }
 }
