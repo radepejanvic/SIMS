@@ -111,12 +111,12 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
 			_bookCollectionService = bookCollectionService;
 			_titles = new();
 			Branches = new();
-			//RegisterCopy = new RegisterCopyCommand(this, bookCollectionService);
+			RegisterCopy = new RegisterCopyCommand(this, bookCollectionService);
 			LoadTitles();
 			LoadBranches();
             PropertyChanged += OnPropertyChanged;
-			//RegisterCopy.ExcecutionCompleted += ExecutionCompleted;
-        }
+			RegisterCopy.ExcecutionCompleted += ExecutionCompleted;
+		}
 
 		private void LoadTitles()
 		{
