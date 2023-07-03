@@ -65,5 +65,20 @@ namespace Library.Core.Service
         {
             return _libraryBranchRepo.GetAll();
         }
+
+        public bool IsUniqueISBN(string ISBN)
+        {
+            return _booktitleRepo.GetByISBN(ISBN) is null;
+        }
+
+        public bool IsUniqueUDK(string UDK)
+        {
+            return _booktitleRepo.GetByUDK(UDK) is null;
+        }
+
+        public bool IsUniqueInventoryNumber(string inventoryNumber)
+        {
+            return _bookCopyRepo.Get(inventoryNumber) is null;
+        }
     }
 }
