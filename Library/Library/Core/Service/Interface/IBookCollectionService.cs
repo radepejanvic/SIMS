@@ -6,6 +6,7 @@ namespace Library.Core.Service.Interface
     public interface IBookCollectionService
     {
         Dictionary<int, Author> GetAllAuthors();
+        Dictionary<int, LibraryBranch> GetAllBranches();
         Dictionary<int, Publisher> GetAllPublishers();
         Dictionary<int, BookTitle> GetAllTitles();
         void RegisterBookCopy(BookCopy bookCopy);

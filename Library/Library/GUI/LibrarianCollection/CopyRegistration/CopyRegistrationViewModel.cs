@@ -16,7 +16,7 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
 {
     public class CopyRegistrationViewModel : ViewModelBase
     {
-		public ObservableCollection<LibraryBranchViewModel> Branches;
+		public ObservableCollection<LibraryBranchViewModel> Branches { get; }
 
 		private LibraryBranchViewModel _selectedBranch;
 		public LibraryBranchViewModel SelectedBranch
@@ -110,8 +110,10 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
         {
 			_bookCollectionService = bookCollectionService;
 			_titles = new();
+			Branches = new();
 			//RegisterCopy = new RegisterCopyCommand(this, bookCollectionService);
 			LoadTitles();
+			LoadBranches();
             PropertyChanged += OnPropertyChanged;
 			//RegisterCopy.ExcecutionCompleted += ExecutionCompleted;
         }
@@ -122,6 +124,15 @@ namespace Library.GUI.LibrarianCollection.CopyRegistration
             foreach (BookTitle title in _bookCollectionService.GetAllTitles().Values)
             {
                 _titles.Add(new BookTitleViewModel(title));
+            }
+        }
+
+		private void LoadBranches()
+		{
+            Branches.Clear();
+            foreach (LibraryBranch branch in _bookCollectionService.GetAllBranches().Values)
+            {
+                Branches.Add(new LibraryBranchViewModel(branch));
             }
         }
 
