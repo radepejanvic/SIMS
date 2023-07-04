@@ -18,7 +18,7 @@
         <!-- Naslov "Doktor" -->
         <TextBlock
             Grid.Row="0"
-            Text="Bibliotekar clanova"
+            Text="Bibliotekar naslova"
             Margin="15"
             VerticalAlignment="Center"
             Style="{StaticResource Header}" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.GUI.LibrarianCollection.Commands;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -28,6 +29,16 @@ namespace Library.GUI.Helpers.Validation
         public static bool CheckAuthors(List<int> authors)
         {
             return authors.Count != 0;
+        }
+
+        public static bool CheckPrice(float price)
+        {
+            return price >= 0;
+        }
+
+        public static bool CheckInventoryNumber(string inventoryNumber)
+        {
+            return inventoryNumber?.Length == 6;
         }
     }
 }

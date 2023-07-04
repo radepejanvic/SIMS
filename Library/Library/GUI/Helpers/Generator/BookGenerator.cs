@@ -56,14 +56,16 @@ namespace Library.GUI.Helpers.Generator
         private readonly IBookAndAuthorRepository _bookAndAuthorRepo;
         private readonly IBookTitleRepository _bookTitleRepo;
         private readonly IBookCopyRepository _bookCopyRepo;
+        private readonly ILibraryBranchRepository _libraryBranchRepo;
 
-        public BookGenerator(IPublisherRepository publisherRepo, IAuthorRepository authorRepo, IBookAndAuthorRepository bookAndAuthorRepo, IBookTitleRepository bookTitleRepo, IBookCopyRepository bookCopyRepo)
+        public BookGenerator(IPublisherRepository publisherRepo, IAuthorRepository authorRepo, IBookAndAuthorRepository bookAndAuthorRepo, IBookTitleRepository bookTitleRepo, IBookCopyRepository bookCopyRepo, ILibraryBranchRepository libraryBranchRepo)
         {
             _publisherRepo = publisherRepo;
             _authorRepo = authorRepo;
             _bookAndAuthorRepo = bookAndAuthorRepo;
             _bookTitleRepo = bookTitleRepo;
             _bookCopyRepo = bookCopyRepo;
+            _libraryBranchRepo = libraryBranchRepo;
         }
 
         public void GenerateLibraryCollection()
@@ -117,6 +119,12 @@ namespace Library.GUI.Helpers.Generator
                 var ISBN = _bookTitleRepo.Get(i).ISBN;
                 _bookCopyRepo.Add(new BookCopy(i, 1, ISBN, GenerateRandomString(6), price, DateTime.Today));
             }
+        }
+
+        public void GenerateBranches()
+        {
+            var  librarians = new List<int>() { 2, 3, 4, 5, 6 };
+            _libraryBranchRepo.Add(new LibraryBranch("Dunavska", new Address("Dunavska", 1, "Novi Sad", "21000", "Srbija"), librarians));
         }
     }
 }

@@ -2,6 +2,7 @@
 {
     public interface IBookGenerator
     {
+        void GenerateBranches();
         void GenerateLibraryCollection();
     }
 }

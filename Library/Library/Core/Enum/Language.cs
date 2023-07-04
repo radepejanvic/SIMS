@@ -8,6 +8,6 @@ namespace Library.Core.Enum
 {
     public enum Language
     {
-        SRB, ENG, RUS, FRE
+        SRP, ENG, RUS, FRA
     }
 }
