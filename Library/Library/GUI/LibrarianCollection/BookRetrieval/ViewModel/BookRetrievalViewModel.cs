@@ -1,16 +1,13 @@
-﻿using Library.ViewModel;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Library.Commands;
 using Library.Core.Model;
 using Library.Core.Service.Interface;
-using Library.GUI.LibrarianCollection.BookRetrieval.ViewModel;
+using Library.ViewModel;
 
-namespace Library.GUI.LibrarianCollection.BookRetrieval
+namespace Library.GUI.LibrarianCollection.BookRetrieval.ViewModel
 {
     public class BookRetrievalViewModel : ViewModelBase
     {
@@ -56,15 +53,16 @@ namespace Library.GUI.LibrarianCollection.BookRetrieval
             }
         }
 
-        public CommandBase CreateLoan { get; }
+        public CommandBase Return { get; }
         public CommandBase LossPenaltyEnforcement { get; }
         public CommandBase DamagePenaltyEnforcement { get; }
         
         private readonly ILoaningService _loaningService;
 
-        public BookLoaningViewModel(ILoaningService loaningService)
+        public BookRetrievalViewModel(ILoaningService loaningService)
         {
             _loaningService = loaningService;
+            _loans = new ObservableCollection<LoanViewModel>();
             // CreateLoan = new CreateLoanCommand(this, loaningService);
             LoadAllLoans();
             PropertyChanged += OnPropertyChanged;
