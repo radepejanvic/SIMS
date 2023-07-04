@@ -1,0 +1,20 @@
+﻿Library
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\veljko\Documents\FAX II GODINA\SPECIFIKACIJA I MODELOVANJE SOFT\Projekat\SIMS\Library\Library\obj\Debug\net6.0-windows\
+Library
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\veljko\Documents\FAX II GODINA\SPECIFIKACIJA I MODELOVANJE SOFT\Projekat\SIMS\Library\Library\App.xaml
+11-834748627
+
+114850529539
+201-452773128
+GUI\Admin\AdminView.xaml;GUI\LibrarianCollection\BookLoaning\BookLoaningView.xaml;GUI\LibrarianCollection\BookRetrieval\BookRetrievalView.xaml;GUI\LibrarianCollection\CopyRegistration\CopyRegistrationView.xaml;GUI\LibrarianCollection\LibrarianCollectionView.xaml;GUI\LibrarianCollection\Reports\ReportsView.xaml;GUI\LibrarianCollection\TitleRegistration\TitleRegistrationView.xaml;GUI\LibrarianMemberships\LibrarianMembershipView.xaml;GUI\Login\LoginView.xaml;GUI\MainWindow.xaml;GUI\Member\MemberView.xaml;
+
+True
+

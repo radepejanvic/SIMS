@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZG0N2F4bUgihPE+qSpuOwxUDu6XHU9M8mTYx9VcpiZOE3g74SvL6yQTkIR/Xx6dXmPu3duLyJQnfSV2IoXTM7g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\veljko\\Documents\\FAX II GODINA\\SPECIFIKACIJA I MODELOVANJE SOFT\\Projekat\\SIMS\\Library\\Library\\Library.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\veljko\\.nuget\\packages\\autofac\\7.0.1\\autofac.7.0.1.nupkg.sha512",
+    "C:\\Users\\veljko\\.nuget\\packages\\extended.wpf.toolkit\\4.5.0\\extended.wpf.toolkit.4.5.0.nupkg.sha512",
+    "C:\\Users\\veljko\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\veljko\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.7.1\\system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
