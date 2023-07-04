@@ -171,5 +171,10 @@ namespace Library.Model
 
             return dates;
         }
+
+        public int GetDurationByDays()
+        {
+            return (int)(_to - _from).TotalDays;
+        }
     }
 }

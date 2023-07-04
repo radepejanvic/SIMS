@@ -65,6 +65,11 @@ namespace Library.Core.Repository
                 .ToList().Count;
         }
 
-
+        public List<Loan> GetAllLoans()
+        {
+            return _repo.GetAll().Values
+                .Where(loan => loan.RetrievalDate is null)
+                .ToList();
+        }
     }
 }

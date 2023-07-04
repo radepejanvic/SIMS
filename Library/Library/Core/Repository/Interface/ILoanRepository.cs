@@ -12,5 +12,6 @@ namespace Library.Core.Repository.Interface
         int GetNumberOfActiveLoans(int membershipCardId);
         void Remove(int id);
         void Update(Loan loan);
+        List<Loan> GetAllLoans();
     }
 }
