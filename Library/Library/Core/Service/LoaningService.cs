@@ -42,9 +42,11 @@ namespace Library.Core.Service
             return _loanRepo.GetNumberOfActiveLoans(membershipCardId) == membership.LoanCount;
         }
 
-        public void RetrieveBook()
+        public void RetrieveBook(int loanId)
         {
-
+            var loan = _loanRepo.Get(loanId);
+            loan.RetrievalDate = DateTime.Now;
+            _loanRepo.Update(loan);
         }
 
         public Dictionary<int, BookCopy> GetAllAvaliableBooks()
@@ -55,6 +57,17 @@ namespace Library.Core.Service
         public string GetBookTitle(int bookId)
         {
             return _titleRepo.Get(bookId).Title;
+        }
+        
+        public List<Loan> GetAll()
+        {
+            return _loanRepo.GetAllLoans();
+        }
+
+        public void RemoveBookCopy(string inventoryNumber)
+        {
+            var bookCopy = _bookCopyRepo.Get(inventoryNumber);
+            _bookCopyRepo.Remove(bookCopy.Id);
         }
     }
 }

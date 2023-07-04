@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,7 @@ namespace Library.Configuration
         private string LibraryBranchJSON = @"..\..\..\Data\libraryBranch.json";
         private string LoanJSON = @"..\..\..\Data\loan.json";
         private string BookAndAuthorJSON = @"..\..\..\Data\bookAndAuthor.json";
+        private string PaymentJSON = @"..\..\..\Data\payment.json";
 
 
         public string GetResourcePath()
@@ -38,6 +40,7 @@ namespace Library.Configuration
                 nameof(LibraryBranch) => LibraryBranchJSON,
                 nameof(Loan) => LoanJSON,
                 nameof(BookAndAuthor) => BookAndAuthorJSON,
+                nameof(Payment) => PaymentJSON,
                 _ => string.Empty
             };
 
