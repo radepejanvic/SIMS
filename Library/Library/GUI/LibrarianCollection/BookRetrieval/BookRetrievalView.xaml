@@ -4,10 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library.GUI.LibrarianCollection.BookRetrieval"
-        xmlns:viewmodel="clr-namespace:Library.GUI.LibrarianCollection.BookLoaning.ViewModel"
-        d:DataContext="{d:DesignInstance Type=viewmodel:BookLoaningViewModel}"
+        xmlns:viewModel="clr-namespace:Library.GUI.LibrarianCollection.BookRetrieval.ViewModel"
+        d:DataContext="{d:DesignInstance Type=viewModel:BookRetrievalViewModel}"
         mc:Ignorable="d"
-        Title="BookLoaning" Height="450" Width="800">
+        Title="Book retrieval" Height="450" Width="800">
     <Grid Background="BlanchedAlmond">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -23,28 +23,34 @@
             VerticalAlignment="Center"
             Style="{StaticResource Header}" />
         
-        
-        
-        
-        
         <Grid Grid.Row="1" Margin="0 0 0 10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <StackPanel 
+                Grid.Column="0" 
+                Orientation="Horizontal" 
+                Margin="10" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center">
                 <TextBlock
                     Grid.Column="0"
                     Text="Pretraga pozajmica:"
                     Margin="0 0 10 0"
                     Style="{StaticResource SubHeader}" />
-                <TextBox Width="150" Text="{Binding Search, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Width="150" 
+                         Text="{Binding SearchLoans, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
         </Grid>
 
 
         <Grid Grid.Row="2">
-            <ListView Grid.Column="0"  Grid.Row="2" Margin="5 0 10 0" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}">
+            <ListView 
+                Grid.Column="0"  
+                Margin="5 0 10 0" 
+                ItemsSource="{Binding Loans}" 
+                SelectedItem="{Binding SelectedLoan}">
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem" >
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -56,31 +62,43 @@
                         <GridViewColumn Header="ID" Width="auto">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding MembershipCardId}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock 
+                                        Text="{Binding Id}" 
+                                        HorizontalAlignment="Center" 
+                                        Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Ime" >
+                        <GridViewColumn Header="Inventarni broj" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock 
+                                        Text="{Binding InventoryNumber}" 
+                                        HorizontalAlignment="Center" 
+                                        Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="Prezime">
+                        <GridViewColumn Header="ID Clanske karte">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding Surname}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock 
+                                        Text="{Binding MembershipCardId}" 
+                                        HorizontalAlignment="Center" 
+                                        Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <GridViewColumn Header="JMBG">
+                        <GridViewColumn Header="Datum isteka pozajmice">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding JMBG}" HorizontalAlignment="Center" Padding="5"/>
+                                    <TextBlock 
+                                        Text="{Binding ExpirationDate, StringFormat={}{0:dd.MM.yyyy}}" 
+                                        HorizontalAlignment="Center" 
+                                        Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -89,6 +107,27 @@
                 </ListView.View>
             </ListView>
         </Grid>
+
+        <StackPanel 
+            Grid.Row ="4" 
+            Grid.Column="2" 
+            Orientation="Horizontal" 
+            Margin="0 25 0 0" 
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Center">
+            <Button 
+                Margin="0 0 10 10" 
+                Content="Gubljenje" 
+                Command="{Binding LossPenaltyEnforcement}"/>
+            <Button 
+                Margin="0 0 10 10" 
+                Content="Ostecenje" 
+                Command="{Binding DamagePenaltyEnforcement}"/>
+            <Button 
+                Margin="0 0 10 10" 
+                Content="Vracanje u fond" 
+                Command="{Binding Return}"/>
+        </StackPanel>
 
     </Grid>
 </Window>
