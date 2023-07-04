@@ -84,10 +84,10 @@ namespace Library.Configuration
             builder.RegisterType<CRUDRepository<MembershipCard>>().As<ICRUDRepository<MembershipCard>>();
             builder.RegisterType<MembershipCardRepository>().As<IMembershipCardRepository>();
 
-            //builder.RegisterType<ResourceConfigurationJSON<Payment>>().As<IResourceConfiguration<Payment>>();
-            //builder.RegisterType<SerializerJSON<Payment>>().As<ISerializer<Payment>>();
-            //builder.RegisterType<CRUDRepository<Payment>>().As<ICRUDRepository<Payment>>();
-            //builder.RegisterType<PaymentRepository>().As<IPaymentRepository>();
+            builder.RegisterType<ResourceConfigurationJSON<Payment>>().As<IResourceConfiguration<Payment>>();
+            builder.RegisterType<SerializerJSON<Payment>>().As<ISerializer<Payment>>();
+            builder.RegisterType<CRUDRepository<Payment>>().As<ICRUDRepository<Payment>>();
+            builder.RegisterType<PaymentRepository>().As<IPaymentRepository>();
 
             builder.RegisterType<ResourceConfigurationJSON<Publisher>>().As<IResourceConfiguration<Publisher>>();
             builder.RegisterType<SerializerJSON<Publisher>>().As<ISerializer<Publisher>>();
@@ -98,6 +98,7 @@ namespace Library.Configuration
             builder.RegisterType<MembersService>().As<IMembersService>();
             builder.RegisterType<LoaningService>().As<ILoaningService>();
             builder.RegisterType<BookCollectionService>().As<IBookCollectionService>();
+            builder.RegisterType<PaymentService>().As<IPaymentService>();
 
             return builder.Build();
         }
