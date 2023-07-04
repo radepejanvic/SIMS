@@ -11,20 +11,23 @@ namespace Library.GUI.LibrarianCollection.BookLoaning.ViewModel
     public class BookCopyViewModel : ViewModelBase
     {
         private readonly BookCopy _bookCopy;
+        private readonly string _title;
 
         public int Id => _bookCopy.Id;
         public string ISBN => _bookCopy.ISBN;
         public string InventoryNumber => _bookCopy.InventoryNumber;
         public float Price => _bookCopy.Price;
+        public string Title => _title;
 
-        public BookCopyViewModel(BookCopy bookCopy)
+        public BookCopyViewModel(BookCopy bookCopy, string title)
         {
             _bookCopy = bookCopy;
+            _title = title;
         }
 
         public bool Contains(string keyword)
         {
-            return $"{Id}--{ISBN}--{InventoryNumber}--{Price}".ToLower().Contains(keyword.ToLower());
+            return $"{Id}--{ISBN}--{InventoryNumber}--{Title}".ToLower().Contains(keyword.ToLower());
         }
     }
 }
