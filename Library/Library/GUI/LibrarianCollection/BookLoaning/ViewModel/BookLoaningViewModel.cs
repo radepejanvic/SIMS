@@ -131,7 +131,7 @@ namespace Library.GUI.LibrarianCollection.BookLoaning.ViewModel
             _bookCopies.Clear();
             foreach (BookCopy bookCopy in _loaningService.GetAllAvaliableBooks().Values)
             {
-                _bookCopies.Add(new BookCopyViewModel(bookCopy));
+                _bookCopies.Add(new BookCopyViewModel(bookCopy, _loaningService.GetBookTitle(bookCopy.BookTitleId)));
             }
         }
 

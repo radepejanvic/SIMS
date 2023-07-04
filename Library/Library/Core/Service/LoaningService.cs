@@ -15,14 +15,16 @@ namespace Library.Core.Service
         private readonly IMembershipRepository _membershipRepo;
         private readonly IBookCopyRepository _bookCopyRepo;
         private readonly ILoanRepository _loanRepo;
+        private readonly IBookTitleRepository _titleRepo;
 
 
-        public LoaningService(IMembershipCardRepository membershipCardRepo, ILoanRepository loanRepo, IBookCopyRepository bookCopyRepo, IMembershipRepository membershipRepo)
+        public LoaningService(IMembershipCardRepository membershipCardRepo, ILoanRepository loanRepo, IBookCopyRepository bookCopyRepo, IMembershipRepository membershipRepo, IBookTitleRepository titleRepo)
         {
             _membershipCardRepo = membershipCardRepo;
             _loanRepo = loanRepo;
             _bookCopyRepo = bookCopyRepo;
             _membershipRepo = membershipRepo;
+            _titleRepo = titleRepo;
         }
 
         public void LoanBook(int membershipCardId, int bookCopyId)
@@ -50,6 +52,11 @@ namespace Library.Core.Service
         public Dictionary<int, BookCopy> GetAllAvaliableBooks()
         {
             return _bookCopyRepo.GetAllAvaliableBooks(_loanRepo.GetAllLoanedBooks());
+        }
+
+        public string GetBookTitle(int bookId)
+        {
+            return _titleRepo.Get(bookId).Title;
         }
         
         public List<Loan> GetAll()
