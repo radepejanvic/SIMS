@@ -5,6 +5,7 @@ using System.Linq;
 using Library.Commands;
 using Library.Core.Model;
 using Library.Core.Service.Interface;
+using Library.GUI.LibrarianCollection.BookRetrieval.Commands;
 using Library.ViewModel;
 
 namespace Library.GUI.LibrarianCollection.BookRetrieval.ViewModel
@@ -56,23 +57,32 @@ namespace Library.GUI.LibrarianCollection.BookRetrieval.ViewModel
         public CommandBase Return { get; }
         public CommandBase LossPenaltyEnforcement { get; }
         public CommandBase DamagePenaltyEnforcement { get; }
-        
+
+        private readonly IPaymentService _paymentService;
         private readonly ILoaningService _loaningService;
 
-        public BookRetrievalViewModel(ILoaningService loaningService)
+        public BookRetrievalViewModel(ILoaningService loaningService, IPaymentService paymentService)
         {
             _loaningService = loaningService;
+            _paymentService = paymentService;
             _loans = new ObservableCollection<LoanViewModel>();
-            // CreateLoan = new CreateLoanCommand(this, loaningService);
+
+            LossPenaltyEnforcement = new LossPenaltyEnforcementCommand(this, paymentService, loaningService);
+            DamagePenaltyEnforcement = new DamagePenaltyEnforcementCommand(this, paymentService, loaningService);
+            Return = new ReturnCommand(this, paymentService, loaningService);
+
             LoadAllLoans();
             PropertyChanged += OnPropertyChanged;
-            // CreateLoan.ExcecutionCompleted += ExecutionCompleted;
+
+            LossPenaltyEnforcement.ExcecutionCompleted += ExecutionCompleted;
+            DamagePenaltyEnforcement.ExcecutionCompleted += ExecutionCompleted;
+            Return.ExcecutionCompleted += ExecutionCompleted;
         }
 
         public void LoadAllLoans()
         {
             _loans.Clear();
-            foreach (Loan loan in _loaningService.GetAll().Values) 
+            foreach (Loan loan in _loaningService.GetAll()) 
             {
                 _loans.Add(new LoanViewModel(loan));
             }
