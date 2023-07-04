@@ -12,13 +12,13 @@ public class LoanViewModel : ViewModelBase
     public int MembershipCardId => _loan.MembershipCardId;
     public DateTime ExpirationDate => _loan.ExpirationDate;
 
-    public LoanViewModel()
-    {
-        
-    }
-
     public LoanViewModel(Loan loan)
     {
         _loan = loan;
+    }
+    
+    public bool Contains(string keyword)
+    {
+        return $"{InventoryNumber}--{MembershipCardId}".ToLower().Contains(keyword.ToLower());
     }
 }
