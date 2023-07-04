@@ -49,5 +49,10 @@ namespace Library.Core.Service
         {
             return _bookCopyRepo.GetAllAvaliableBooks(_loanRepo.GetAllLoanedBooks());
         }
+        
+        public Dictionary<int, Loan> GetAll()
+        {
+            return _loanRepo.GetAll();
+        }
     }
 }
