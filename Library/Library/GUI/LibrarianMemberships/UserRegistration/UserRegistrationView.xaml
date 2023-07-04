@@ -1,0 +1,245 @@
+﻿<Window x:Class="Library.GUI.LibrarianMemberships.UserRegistration.UserRegistrationView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:Library.GUI.LibrarianMemberships.UserRegistration"
+      mc:Ignorable="d"
+      Title="UserRegistrationView" Height="600" Width="700">
+<Grid Background="BlanchedAlmond">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock
+        Grid.Row="0"
+        Text="Registracija clana"
+        Margin="15"
+        VerticalAlignment="Center"
+        Style="{StaticResource Header}" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Forma podataka o novom clanu"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+            </Grid>
+
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Select Membership Type"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource SubHeader}" />
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    Text="JMBG: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding JMBG}"/>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    Text="Name: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding Name}"/>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="2"
+                    Text="Surname: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding Surname}"/>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="3"
+                    Text="Phone: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding Phone}"/>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    Text="Email: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding Email}"/>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Text="Address: "
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+                <TextBox
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Margin="10"
+                    VerticalAlignment="Center"
+                    Width="140"
+                    Text="{Binding Address}"/>
+                
+                <TextBlock
+                    Grid.Column="0"
+                    Grid.Row="5"
+                    Text="{Binding Error}"
+                    Foreground="Red"
+                    Margin="15"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </Grid>
+
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <ListView Grid.Row="0" Margin="5 0 10 0" ItemsSource="{Binding Memberships}"  SelectedItem="{Binding SelectedMembership}">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem" >
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                    <ListView.View>
+                        <GridView>
+
+                            <GridViewColumn Header="ID" Width="auto">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Id}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Type">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding MembershipType}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Price">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Loan number">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding LoanCount}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Loan length">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding LoanDuration}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Fine per day">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FinePerDay}" HorizontalAlignment="Center" Padding="5"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+            
+        </Grid>
+
+        <StackPanel Grid.Row ="2" Orientation="Horizontal" Margin="10" HorizontalAlignment="Right" VerticalAlignment="Center">
+            <Button Content="Registruj clana" Margin="10 0 0 0" Command="{Binding RegisterUser}"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

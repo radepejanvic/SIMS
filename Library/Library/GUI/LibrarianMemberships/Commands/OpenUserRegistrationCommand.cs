@@ -4,6 +4,8 @@ using Library.Commands;
 using Library.Core.Service.Interface;
 using Library.GUI.LibrarianCollection.TitleRegistration;
 using Library.GUI.LibrarianCollection.TitleRegistration.ViewModel;
+using Library.GUI.LibrarianMemberships.UserRegistration;
+using Library.GUI.LibrarianMemberships.UserRegistration.ViewModel;
 
 namespace Library.GUI.LibrarianMemberships.Commands
 {
@@ -23,6 +25,10 @@ namespace Library.GUI.LibrarianMemberships.Commands
         public override void Execute(object? parameter)
         {
             Debug.WriteLine("MY WINDOW (c) Alex M.");
+            
+            var popup = new UserRegistrationView();
+            popup.DataContext = new UserRegistrationViewModel(_membersService);
+            popup.ShowDialog();
         }
     }
 }
