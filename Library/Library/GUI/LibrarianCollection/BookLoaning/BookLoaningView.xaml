@@ -85,6 +85,14 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
+                        <GridViewColumn Header="Naslov" >
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" Padding="5"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
                         <GridViewColumn Header="ISBN" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
@@ -97,14 +105,6 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding InventoryNumber}" HorizontalAlignment="Center" Padding="5"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-
-                        <GridViewColumn Header="Cena">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding Price}" HorizontalAlignment="Center" Padding="5"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
