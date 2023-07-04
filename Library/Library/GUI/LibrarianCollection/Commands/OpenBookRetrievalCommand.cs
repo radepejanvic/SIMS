@@ -5,14 +5,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Library.Core.Service.Interface;
+using Library.GUI.LibrarianCollection.BookRetrieval.ViewModel;
 
 namespace Library.GUI.LibrarianCollection.Commands
 {
     public class OpenBookRetrievalCommand : CommandBase
     {
-        public OpenBookRetrievalCommand() 
+        private readonly ILoaningService _loaningService;
+        public OpenBookRetrievalCommand(ILoaningService loaningService)
         {
-
+            _loaningService = loaningService;
         }
 
         public override bool CanExecute(object? parameter)
@@ -23,7 +26,7 @@ namespace Library.GUI.LibrarianCollection.Commands
         public override void Execute(object? parameter)
         {
             var popup = new BookRetrievalView();
-            popup.DataContext = new BookRetrievalViewModel();
+            popup.DataContext = new BookRetrievalViewModel(_loaningService);
             popup.ShowDialog();
         }
     }

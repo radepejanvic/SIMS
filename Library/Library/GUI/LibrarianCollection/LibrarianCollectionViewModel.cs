@@ -43,7 +43,7 @@ namespace Library.GUI.LibrarianCollection
             OpenTitleRegistration = new OpenTitleRegistrationCommand(_bookCollectionService);
             OpenCopyRegistration = new OpenCopyRegistrationCommand();
             OpenBookLoaning = new OpenBookLoaningCommand(_membersService, _loaningService);
-            OpenBookRetrieval = new OpenBookRetrievalCommand();
+            OpenBookRetrieval = new OpenBookRetrievalCommand(_loaningService);
             OpenReports = new OpenReportsCommand();
         }
     }
