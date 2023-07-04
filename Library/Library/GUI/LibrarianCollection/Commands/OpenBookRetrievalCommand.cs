@@ -13,9 +13,11 @@ namespace Library.GUI.LibrarianCollection.Commands
     public class OpenBookRetrievalCommand : CommandBase
     {
         private readonly ILoaningService _loaningService;
-        public OpenBookRetrievalCommand(ILoaningService loaningService)
+        private readonly IPaymentService _paymentService;
+        public OpenBookRetrievalCommand(ILoaningService loaningService, IPaymentService paymentService)
         {
             _loaningService = loaningService;
+            _paymentService = paymentService;
         }
 
         public override bool CanExecute(object? parameter)
@@ -26,7 +28,7 @@ namespace Library.GUI.LibrarianCollection.Commands
         public override void Execute(object? parameter)
         {
             var popup = new BookRetrievalView();
-            popup.DataContext = new BookRetrievalViewModel(_loaningService);
+            popup.DataContext = new BookRetrievalViewModel(_loaningService, _paymentService);
             popup.ShowDialog();
         }
     }
