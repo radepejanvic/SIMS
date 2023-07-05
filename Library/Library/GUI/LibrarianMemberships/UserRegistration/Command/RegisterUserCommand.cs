@@ -22,6 +22,17 @@ public class RegisterUserCommand : CommandBase
         _membersService = membersService;
         _userRegistrationViewModel.PropertyChanged += OnViewModelPropertyChanged;
     }
+    
+    bool IsDigitsOnly(string str)
+    {
+        foreach (char c in str)
+        {
+            if (c < '0' || c > '9')
+                return false;
+        }
+
+        return true;
+    }
 
     public override bool CanExecute(object? parameter)
     {
@@ -30,7 +41,7 @@ public class RegisterUserCommand : CommandBase
                (!string.IsNullOrEmpty(_userRegistrationViewModel.Surname)) &&
                (!string.IsNullOrEmpty(_userRegistrationViewModel.Email)) &&
                (!string.IsNullOrEmpty(_userRegistrationViewModel.Phone)) &&
-               int.TryParse(_userRegistrationViewModel.JMBG, out _);
+               IsDigitsOnly(_userRegistrationViewModel.JMBG);
     }
 
     public override void Execute(object? parameter)
@@ -58,7 +69,7 @@ public class RegisterUserCommand : CommandBase
     private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
         _userRegistrationViewModel.Error = "";
-        if (!int.TryParse(_userRegistrationViewModel.JMBG, out _))
+        if (!IsDigitsOnly(_userRegistrationViewModel.JMBG))
         {
             _userRegistrationViewModel.Error += " JMBG must be number!";
         }
