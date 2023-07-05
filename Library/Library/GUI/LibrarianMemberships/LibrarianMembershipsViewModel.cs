@@ -21,7 +21,6 @@ namespace Library.GUI.LibrarianMemberships
         
         private readonly IMembersService _membersService;
         private readonly ILoaningService _loaningService;
-        private readonly IBookCollectionService _bookCollectionService;
         private readonly IPaymentService _paymentService;
 
         public ICommand OpenBookLoaning { get; }
@@ -36,7 +35,6 @@ namespace Library.GUI.LibrarianMemberships
             {
                 _membersService = scope.Resolve<IMembersService>();
                 _loaningService = scope.Resolve<ILoaningService>();
-                _bookCollectionService = scope.Resolve<IBookCollectionService>();
                 _paymentService = scope.Resolve<IPaymentService>();
             }
             

@@ -22,8 +22,6 @@ namespace Library.GUI.LibrarianCollection
         public ICommand OpenTitleRegistration { get; }
         public ICommand OpenCopyRegistration { get; }
 
-        private readonly IMembersService _membersService;
-        private readonly ILoaningService _loaningService;
         private readonly IBookCollectionService _bookCollectionService;
 
         public LibrarianCollectionViewModel(User user)
