@@ -10,5 +10,6 @@ namespace Library.Core.Repository.Interface
         Dictionary<int, Payment> GetAll();
         void Remove(int id);
         void Update(Payment payment);
+        List<Payment> GetAllByDate();
     }
 }
