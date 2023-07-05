@@ -52,7 +52,7 @@ namespace Library.Core.Service
         {
             // So the process is to Add User -> Get User by Username -> Set Persons UserId -> Add Person -> GetPerson by JMBG -> Set MembershipCards PersonId -> Add MembershipCard
             
-            _userRepo.Add(new User(int.Parse(jmbg), email, RandomString(8), UserType.MEMBER));
+            _userRepo.Add(new User(null, email, RandomString(8), UserType.MEMBER));
             int userId = _userRepo.Get(email).Id;
             
             _personRepo.Add(new Person(userId, jmbg, name, surname, phone, email, null));
