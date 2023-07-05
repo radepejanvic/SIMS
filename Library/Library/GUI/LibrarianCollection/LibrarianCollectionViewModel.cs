@@ -30,8 +30,6 @@ namespace Library.GUI.LibrarianCollection
 
             using (var scope = container.BeginLifetimeScope())
             {
-                _membersService = scope.Resolve<IMembersService>();
-                _loaningService = scope.Resolve<ILoaningService>();
                 _bookCollectionService = scope.Resolve<IBookCollectionService>();
             }
                 _user = user;
