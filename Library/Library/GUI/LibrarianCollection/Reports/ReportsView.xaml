@@ -7,9 +7,10 @@
         xmlns:viewModel="clr-namespace:Library.GUI.LibrarianCollection.Reports.ViewModel"
         d:DataContext="{d:DesignInstance Type=viewModel:ReportsViewModel}"
         mc:Ignorable="d"
-        Title="Report" Height="450" Width="800">
+        Title="Report" Height="640" Width="800">
     <Grid Background="BlanchedAlmond">
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
@@ -26,7 +27,28 @@
             Style="{StaticResource Header}" />
 
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0 0 0 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel 
+                Grid.Column="0" 
+                Orientation="Horizontal" 
+                Margin="10" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center">
+                <TextBlock
+                    Grid.Column="0"
+                    Text="Pretraga pozajmica:"
+                    Margin="0 0 10 0"
+                    Style="{StaticResource SubHeader}" />
+                <TextBox Width="150" 
+                         Text="{Binding SearchPayment, UpdateSourceTrigger=PropertyChanged}"/>
+            </StackPanel>
+        </Grid>
+        
+        <Grid Grid.Row="2">
             <ListView 
                 Grid.Column="0"  
                 Margin="5 0 10 0" 
@@ -100,7 +122,7 @@
             </ListView>
         </Grid>
 
-        <Grid Grid.Row="2">
+        <Grid Grid.Row="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -147,7 +169,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="3">
+        <Grid Grid.Row="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -194,7 +216,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="4">
+        <Grid Grid.Row="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -241,7 +263,7 @@
             </Grid>
         </Grid>
 
-        <Grid Grid.Row="5">
+        <Grid Grid.Row="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
