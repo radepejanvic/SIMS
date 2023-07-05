@@ -21,14 +21,10 @@ namespace Library.GUI.LibrarianCollection
         private readonly User _user;
         public ICommand OpenTitleRegistration { get; }
         public ICommand OpenCopyRegistration { get; }
-        public ICommand OpenBookLoaning { get; }
-        public ICommand OpenBookRetrieval { get; }
-        public ICommand OpenReports { get; }
 
         private readonly IMembersService _membersService;
         private readonly ILoaningService _loaningService;
         private readonly IBookCollectionService _bookCollectionService;
-        private readonly IPaymentService _paymentService;
 
         public LibrarianCollectionViewModel(User user)
         {
@@ -39,15 +35,11 @@ namespace Library.GUI.LibrarianCollection
                 _membersService = scope.Resolve<IMembersService>();
                 _loaningService = scope.Resolve<ILoaningService>();
                 _bookCollectionService = scope.Resolve<IBookCollectionService>();
-                _paymentService = scope.Resolve<IPaymentService>();
             }
                 _user = user;
 
             OpenTitleRegistration = new OpenTitleRegistrationCommand(_bookCollectionService);
             OpenCopyRegistration = new OpenCopyRegistrationCommand(_bookCollectionService);
-            OpenBookLoaning = new OpenBookLoaningCommand(_membersService, _loaningService);
-            OpenBookRetrieval = new OpenBookRetrievalCommand(_loaningService, _paymentService);
-            OpenReports = new OpenReportsCommand(_paymentService);
         }
     }
 }

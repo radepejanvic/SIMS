@@ -4,6 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:Library.GUI.LibrarianMemberships.UserRegistration"
+      xmlns:viewmodel="clr-namespace:Library.GUI.LibrarianMemberships.UserRegistration.ViewModel" 
+      d:DataContext="{d:DesignInstance Type=viewmodel:UserRegistrationViewModel}"
       mc:Ignorable="d"
       Title="UserRegistrationView" Height="600" Width="700">
 <Grid Background="BlanchedAlmond">
