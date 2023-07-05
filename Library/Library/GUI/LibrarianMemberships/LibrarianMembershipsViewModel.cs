@@ -10,6 +10,7 @@ using Autofac;
 using Library.Configuration;
 using Library.Core.Service.Interface;
 using Library.GUI.LibrarianMemberships.Commands;
+using Library.GUI.LibrarianCollection.Commands;
 
 namespace Library.GUI.LibrarianMemberships
 {
@@ -20,8 +21,12 @@ namespace Library.GUI.LibrarianMemberships
         
         private readonly IMembersService _membersService;
         private readonly ILoaningService _loaningService;
-        private readonly IBookCollectionService _bookCollectionService;
-        
+        private readonly IPaymentService _paymentService;
+
+        public ICommand OpenBookLoaning { get; }
+        public ICommand OpenBookRetrieval { get; }
+        public ICommand OpenReports { get; }
+
         public LibrarianMembershipsViewModel(User user)
         {
             var container = ContainerConfiguration.Configure();
@@ -30,12 +35,15 @@ namespace Library.GUI.LibrarianMemberships
             {
                 _membersService = scope.Resolve<IMembersService>();
                 _loaningService = scope.Resolve<ILoaningService>();
-                _bookCollectionService = scope.Resolve<IBookCollectionService>();
+                _paymentService = scope.Resolve<IPaymentService>();
             }
             
             _user = user;
             
             OpenUserRegistration = new OpenUserRegistrationCommand(_membersService);
+            OpenBookLoaning = new OpenBookLoaningCommand(_membersService, _loaningService);
+            OpenBookRetrieval = new OpenBookRetrievalCommand(_loaningService, _paymentService);
+            OpenReports = new OpenReportsCommand(_paymentService);
         }
     }
 }
