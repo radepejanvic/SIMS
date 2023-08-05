@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xceed.Wpf.Toolkit.Core.Converters;
 
 namespace Library.Core.Repository
 {
@@ -42,5 +43,14 @@ namespace Library.Core.Repository
         {
             return _repo.GetAll();
         }
+
+        public List<Payment> GetAllByDate()
+        {
+            return _repo.GetAll().Values
+                .Where(payment => payment.PaymentDate.Date == DateTime.Today)
+                .ToList();
+        }
+
+
     }
 }
