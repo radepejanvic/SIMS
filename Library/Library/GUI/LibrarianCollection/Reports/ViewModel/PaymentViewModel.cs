@@ -16,12 +16,33 @@ namespace Library.GUI.LibrarianCollection.Reports.ViewModel
         public int MembershipCardId => _payment.MembershipCardId;
         public float Amount => _payment.Amount;
         public DateTime PaymentDate => _payment.PaymentDate;
-        public PaymentReason Reason => _payment.Reason;
+        public string Reason => SetReason();
 
         public PaymentViewModel(Payment payment)
         {
             _payment = payment;
         }
 
+        public bool Contains(string keyword)
+        {
+            return $"{Reason}--{MembershipCardId}".ToLower().Contains(keyword.ToLower());
+        }
+
+        private string SetReason()
+        {
+            if (_payment.Reason == PaymentReason.DELAY)
+            {
+                return "KASNJENJE";
+            }
+            if (_payment.Reason == PaymentReason.DAMAGE)
+            {
+                return "OSTECENJE";
+            }
+            if (_payment.Reason == PaymentReason.LOSS)
+            {
+                return "GUBLJENJE";
+            }
+            return "";
+        }
     }
 }
