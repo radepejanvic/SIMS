@@ -8,6 +8,7 @@ using Library.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,20 @@ namespace Library.GUI.LibrarianCollection.Reports.ViewModel
             {
                 _payments = value;
                 OnPropertyChanged(nameof(Payments));
+            }
+        }
+
+        private string _searchPayment;
+        public string SearchPayment
+        {
+            get
+            {
+                return _searchPayment;
+            }
+            set
+            {
+                _searchPayment = value;
+                OnPropertyChanged(nameof(SearchPayment));
             }
         }
 
@@ -149,6 +164,7 @@ namespace Library.GUI.LibrarianCollection.Reports.ViewModel
 
             _payments = new ObservableCollection<PaymentViewModel>();
             LoadAllPayments();
+            PropertyChanged += OnPropertyChanged;
 
             PaymentsCount = paymentService.GetAllByDateCount();
             PaymentsAmount = paymentService.GetAllByDateAmount();
@@ -171,6 +187,33 @@ namespace Library.GUI.LibrarianCollection.Reports.ViewModel
             {
                 _payments.Add(new PaymentViewModel(payment));
             }
+        }
+
+        private void OnPropertyChanged(object? sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(SearchPayment) && !string.IsNullOrEmpty(SearchPayment))
+            {
+                var filtered = _payments.Where(loan => loan.Contains(SearchPayment)).ToList();
+                CopyFilteredPayments(filtered);
+            }
+            else if (e.PropertyName == nameof(SearchPayment))
+            {
+                LoadAllPayments();
+            }
+        }
+
+        private void CopyFilteredPayments(List<PaymentViewModel> filtered)
+        {
+            _payments.Clear();
+            foreach (PaymentViewModel payment in filtered)
+            {
+                _payments.Add(payment);
+            }
+        }
+
+        private void ChangeReason()
+        {
+
         }
     }
 }
